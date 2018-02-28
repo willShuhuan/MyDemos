@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'//bufferknife相关
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.dsh.mydemos"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+greendao{
+    schemaVersion 1//数据库版本号
+    daoPackage 'com.dsh.mydemos.greendao'//设置DaoMaster、DaoSession、Dao包名
+    targetGenDir 'src/main/java'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    testCompile 'junit:junit:4.12'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.jakewharton:butterknife:8.1.0'//bufferknife相关
+    apt 'com.jakewharton:butterknife-compiler:8.1.0'//bufferknife相关
+    //FlowLayout
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    //数据库
+    compile 'org.greenrobot:greendao:3.2.0'
+//    //数据库升级辅助类
+    compile 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.4.0'
+}
