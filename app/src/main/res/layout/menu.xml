@@ -26,6 +26,13 @@
         android:textAllCaps="false"
         android:text="FlowLayout+GreenDao"/>
 
+    <Button
+        android:id="@+id/mycamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="自定义相机"/>
+
 
 
 

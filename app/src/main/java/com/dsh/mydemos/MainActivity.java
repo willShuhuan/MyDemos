@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.dsh.mydemos.activity.MyCameraActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
@@ -18,6 +19,8 @@ public class MainActivity extends BaseActivity {
     Button mRxjava;
     @BindView(R.id.flowLayout)
     Button mFlowLayout;
+    @BindView(R.id.mycamera)
+    Button mMycamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +28,26 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.menu);
         ButterKnife.bind(this);
 
+        initView();
         setListener();
+        initData();
+    }
+
+    @Override
+    public void initView() {
+
     }
 
     @Override
     public void setListener() {
         mRxjava.setOnClickListener(this);
         mFlowLayout.setOnClickListener(this);
+        mMycamera.setOnClickListener(this);
+    }
+
+    @Override
+    public void initData() {
+
     }
 
     @Override
@@ -42,6 +58,9 @@ public class MainActivity extends BaseActivity {
         			break;
                 case R.id.flowLayout:
         			startActivity(new Intent(MainActivity.this, SearchViewGreenDaoActivity.class));
+        			break;
+                case R.id.mycamera:
+        			startActivity(new Intent(MainActivity.this, MyCameraActivity.class));
         			break;
 
         		default:

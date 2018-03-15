@@ -11,32 +11,22 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2018/2/27.
  */
 
-public class BaseActivity extends AppCompatActivity implements BaseInterface{
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-    }
-
-    @Override
-    public void initView() {
 
     }
 
-    @Override
-    public void setListener() {
 
-    }
+    public abstract void initView() ;
 
-    @Override
-    public void initData() {
+    public abstract void setListener() ;
 
-    }
+    public abstract void initData() ;
 
-    @Override
-    public void onClick(View arg0) {
-
-    }
+    public abstract void onClick(View arg0);
 }
