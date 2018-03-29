@@ -9,6 +9,14 @@
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +38,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.MyCameraActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.IntentServiceActivity"
+            android:screenOrientation="portrait"/>
+        <service android:name=".service.MyIntentService"/>
+
     </application>
 
 </manifest>

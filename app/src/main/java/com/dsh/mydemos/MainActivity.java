@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.dsh.mydemos.activity.IntentServiceActivity;
 import com.dsh.mydemos.activity.MyCameraActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
@@ -21,6 +22,9 @@ public class MainActivity extends BaseActivity {
     Button mFlowLayout;
     @BindView(R.id.mycamera)
     Button mMycamera;
+    @BindView(R.id.intentservice)
+    Button mIntentservice;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,7 @@ public class MainActivity extends BaseActivity {
         mRxjava.setOnClickListener(this);
         mFlowLayout.setOnClickListener(this);
         mMycamera.setOnClickListener(this);
+        mIntentservice.setOnClickListener(this);
     }
 
     @Override
@@ -61,6 +66,9 @@ public class MainActivity extends BaseActivity {
         			break;
                 case R.id.mycamera:
         			startActivity(new Intent(MainActivity.this, MyCameraActivity.class));
+        			break;
+                case R.id.intentservice:
+        			startActivity(new Intent(MainActivity.this, IntentServiceActivity.class));
         			break;
 
         		default:

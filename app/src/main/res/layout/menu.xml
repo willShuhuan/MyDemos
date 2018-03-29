@@ -33,6 +33,13 @@
         android:textAllCaps="false"
         android:text="自定义相机"/>
 
+    <Button
+        android:id="@+id/intentservice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="IntentService"/>
+
 
 
 
