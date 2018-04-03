@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/view111"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#fff" >
+
+
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:singleLine="true"
+            android:text="录音"
+            android:textColor="#666"
+            android:textSize="17sp" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view222"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/view111"
+        android:background="#e8e8e8" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view222"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="2017年"
+        android:textColor="#999"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_recordtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_time"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="00:00:00"
+        android:textColor="#999"
+        android:textSize="40sp" />
+
+    <TextView
+        android:id="@+id/vol"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv_recordtime"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="音量"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vol"
+        android:layout_marginTop="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/img_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/photo_take"/>
+                <TextView
+                    android:id="@+id/tv_record"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="录音"
+                    android:textColor="#fff"
+                    android:textSize="25sp"/>
+
+            </RelativeLayout>
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/audio_play"/>
+
+            <TextView
+                android:id="@+id/tv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="播放"
+                android:textColor="#999"/>
+
+            <TextView
+                android:id="@+id/tv_playtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="#ff850d"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view333"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ll_record"
+        android:layout_margin="20dp"
+        android:background="#e8e8e8" />
+
+    <TextView
+        android:id="@+id/tv_savepath"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view333"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:maxLines="3"
+        android:text=""
+        android:textColor="#999"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>

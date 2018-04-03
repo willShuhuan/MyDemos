@@ -40,6 +40,14 @@
         android:textAllCaps="false"
         android:text="IntentService"/>
 
+    <Button
+        android:id="@+id/mp3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="AudioRecorder+Lame  MP3录音"/>
+
+
 
 
 

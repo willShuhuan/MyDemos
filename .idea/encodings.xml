@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/libs/armeabi" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/libs/armeabi/libmp3lame.so" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/buihha/audiorecorder/Mp3Recorder.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/camera/SurfacePreview.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/player/IVoiceManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/player/MediaPlayerUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/player/UPlayer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/player/UpdateVoiceTimeThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/service/AudioMp3RecoderService3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dsh/mydemos/utils/TimeUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/audio_play.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/audio_stop.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/back_white.png" charset="GBK" />
   </component>
 </project>

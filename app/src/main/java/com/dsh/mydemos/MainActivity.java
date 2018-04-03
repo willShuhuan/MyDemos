@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.dsh.mydemos.activity.AudioMp3Activity;
 import com.dsh.mydemos.activity.IntentServiceActivity;
 import com.dsh.mydemos.activity.MyCameraActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
@@ -24,6 +25,8 @@ public class MainActivity extends BaseActivity {
     Button mMycamera;
     @BindView(R.id.intentservice)
     Button mIntentservice;
+    @BindView(R.id.mp3)
+    Button mMp3;
 
 
     @Override
@@ -48,6 +51,7 @@ public class MainActivity extends BaseActivity {
         mFlowLayout.setOnClickListener(this);
         mMycamera.setOnClickListener(this);
         mIntentservice.setOnClickListener(this);
+        mMp3.setOnClickListener(this);
     }
 
     @Override
@@ -58,21 +62,24 @@ public class MainActivity extends BaseActivity {
     @Override
     public void onClick(View arg0) {
         switch (arg0.getId()) {
-        		case R.id.rxjava:
-        			startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
-        			break;
-                case R.id.flowLayout:
-        			startActivity(new Intent(MainActivity.this, SearchViewGreenDaoActivity.class));
-        			break;
-                case R.id.mycamera:
-        			startActivity(new Intent(MainActivity.this, MyCameraActivity.class));
-        			break;
-                case R.id.intentservice:
-        			startActivity(new Intent(MainActivity.this, IntentServiceActivity.class));
-        			break;
+            case R.id.rxjava:
+                startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
+                break;
+            case R.id.flowLayout:
+                startActivity(new Intent(MainActivity.this, SearchViewGreenDaoActivity.class));
+                break;
+            case R.id.mycamera:
+                startActivity(new Intent(MainActivity.this, MyCameraActivity.class));
+                break;
+            case R.id.intentservice:
+                startActivity(new Intent(MainActivity.this, IntentServiceActivity.class));
+                break;
+            case R.id.mp3:
+                startActivity(new Intent(MainActivity.this, AudioMp3Activity.class));
+                break;
 
-        		default:
-        			break;
-        		}
+            default:
+                break;
+        }
     }
 }

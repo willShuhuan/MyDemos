@@ -1,11 +1,13 @@
 package com.dsh.mydemos.activity;
 
+import android.Manifest;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.OrientationEventListener;
 import android.view.View;
@@ -51,6 +53,7 @@ public class MyCameraActivity extends BaseActivity implements  Camera.PictureCal
     private static final String TAG = MyCameraActivity.class.getSimpleName();
     private int curRotation = 0;
     private Context mContext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
