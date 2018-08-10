@@ -82,7 +82,7 @@ public class SurfacePreview extends SurfaceView implements SurfaceHolder.Callbac
         Display display = wm.getDefaultDisplay();
         int screenWidth = display.getWidth();
         int screenHeight = display.getHeight();
-        //Ïà»úÖ§³ÖµÄÅÄÉãÍ¼Æ¬³ß´ç£¬ÅÄÕÕÍ¼Æ¬³ß´çĞ¡ÓÚµÈÓÚÆÁÄ»³ß´ç£¬ÊµÏÖÊÊÅä
+        //ç›¸æœºæ”¯æŒçš„æ‹æ‘„å›¾ç‰‡å°ºå¯¸ï¼Œæ‹ç…§å›¾ç‰‡å°ºå¯¸å°äºç­‰äºå±å¹•å°ºå¯¸ï¼Œå®ç°é€‚é…
         if (pictureSizes.size() > 1) {
             for (Camera.Size size2 : pictureSizes) {
                 System.out.println("initCamera:" + size2.width + size2.height);
@@ -100,12 +100,12 @@ public class SurfacePreview extends SurfaceView implements SurfaceHolder.Callbac
             picSize = pictureSizes.get(0);
         }
         mParameters.setPictureSize(picSize.width, picSize.height);
-        //ÉèÖÃ³ß´çÒÔÊÊÅäËùÓĞ»úĞÍ£¬Í¼Æ¬³ß´çĞ¡ÓÚµÈÓÚÆÁÄ»³ß´ç£¬²¿·Ö»úĞÍ±ÀÀ£µÄÎÊÌâµÃµ½ÁË½â¾ö
-        mParameters.setJpegQuality(99); // ÉèÖÃÕÕÆ¬ÖÊÁ¿
+        //è®¾ç½®å°ºå¯¸ä»¥é€‚é…æ‰€æœ‰æœºå‹ï¼Œå›¾ç‰‡å°ºå¯¸å°äºç­‰äºå±å¹•å°ºå¯¸ï¼Œéƒ¨åˆ†æœºå‹å´©æºƒçš„é—®é¢˜å¾—åˆ°äº†è§£å†³
+        mParameters.setJpegQuality(99); // è®¾ç½®ç…§ç‰‡è´¨é‡
         List<String> aa = mParameters.getSupportedFocusModes();
-        //ÉèÖÃ¶Ô½¹Ä£Ê½£¬µÍ¶Ë»úĞÍ¿ÉÄÜ²»Ö§³Ö¿ìËÙ¶Ô½¹£¬µ±È»ÏÖÔÚ´ó²¿·Ö»úĞÍÖ§³Ö£¬µ«ÊÇÒ²µÃÊÊÅä°¡
+        //è®¾ç½®å¯¹ç„¦æ¨¡å¼ï¼Œä½ç«¯æœºå‹å¯èƒ½ä¸æ”¯æŒå¿«é€Ÿå¯¹ç„¦ï¼Œå½“ç„¶ç°åœ¨å¤§éƒ¨åˆ†æœºå‹æ”¯æŒï¼Œä½†æ˜¯ä¹Ÿå¾—é€‚é…å•Š
         if (aa.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE)) {
-            mParameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);//¿ìËÙ¶Ô½¹
+            mParameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);//å¿«é€Ÿå¯¹ç„¦
         } else {
             mParameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
         }
@@ -131,12 +131,12 @@ public class SurfacePreview extends SurfaceView implements SurfaceHolder.Callbac
         Log.d(TAG, "surfaceDestroyed() is called");
     }
 
-    //ÅÄÕÕ
+    //æ‹ç…§
     public void takePicture(Camera.PictureCallback imageCallback) {
         Log.d(TAG, "takePicture: " + isSuccess);
         if (isSuccess) {
             mCamera.takePicture(null, null, imageCallback);
-        } else {//Èç¹û²»³É¹¦ÔòÖØÊÔ¶Ô½¹£¬·ñÔòÅÄ³öµÄÕÕÆ¬¿ÉÄÜºı
+        } else {//å¦‚æœä¸æˆåŠŸåˆ™é‡è¯•å¯¹ç„¦ï¼Œå¦åˆ™æ‹å‡ºçš„ç…§ç‰‡å¯èƒ½ç³Š
             initCamera();
             mCamera.cancelAutoFocus();
             mCamera.takePicture(null, null, imageCallback);

@@ -8,21 +8,21 @@ import java.text.SimpleDateFormat;
  */
 public class TimeUtils {
 
-    //ºÁÃë×ªÃë
+    //æ¯«ç§’è½¬ç§’
     public static String long2String(long time){
 
-        //ºÁÃë×ªÃë
+        //æ¯«ç§’è½¬ç§’
         int sec = (int) time / 1000 ;
-        int min = sec / 60 ;	//·ÖÖÓ
-        sec = sec % 60 ;		//Ãë
-        if(min < 10){	//·ÖÖÓ²¹0
-            if(sec < 10){	//Ãë²¹0
+        int min = sec / 60 ;	//åˆ†é’Ÿ
+        sec = sec % 60 ;		//ç§’
+        if(min < 10){	//åˆ†é’Ÿè¡¥0
+            if(sec < 10){	//ç§’è¡¥0
                 return "0"+min+":0"+sec;
             }else{
                 return "0"+min+":"+sec;
             }
         }else{
-            if(sec < 10){	//Ãë²¹0
+            if(sec < 10){	//ç§’è¡¥0
                 return min+":0"+sec;
             }else{
                 return min+":"+sec;
@@ -32,7 +32,7 @@ public class TimeUtils {
     }
 
     /**
-     * ·µ»Øµ±Ç°Ê±¼äµÄ¸ñÊ½Îª yyyy-MM-dd HH:mm:ss
+     * è¿”å›å½“å‰æ—¶é—´çš„æ ¼å¼ä¸º yyyy-MM-dd HH:mm:ss
      * @return
      */
     public static String  getCurrentTime() {

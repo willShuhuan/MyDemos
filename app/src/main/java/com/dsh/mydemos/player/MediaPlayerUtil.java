@@ -13,16 +13,16 @@ import android.telephony.TelephonyManager;
 import android.widget.TextView;
 
 /**
- * 2014-3-24ÏÂÎç4:19:16
- * 2017-3-27  DSH¸ÄÁËÏÂ
- * 
+ * 2014-3-24ä¸‹åˆ4:19:16
+ * 2017-3-27  DSHæ”¹äº†ä¸‹
+ *
  * @author:hlloworld.Mr-zz
- * 
- * @todo:MediaPlayer¹¤¾ßÀà£¬¿ÉÒÔµÃµ½Ò»¸ö×°ÔØºÃµÄMediaPlayer,²¢ÇÒ×°ÔØÍê±Ïºó»á×Ô¶¯²¥·ÅÒ»´Î 
- *                                                           1.Ê×ÏÈ»á¼ì²é±¾µØÊÇ·ñÓÐÖ¸¶¨Â·¾¶£¨¸ÃÂ·¾¶ÓÐÏîÄ¿¸ùÄ¿Â¼
- *                                                           +voice+ÍøÂçÂ·¾¶µÄÎÄ¼þÃû×é³É£©
- *                                                           µÄÒôÆµÎÄ¼þ 2.Èç¹û´æÔÚ£¬Ö±½Ó×°ÔØ²¥·Å
- *                                                           3.Èç¹û²»´æÔÚ£¬ÔòÒì²½²¥·ÅÍøÂçÒôÆµ
+ *
+ * @todo:MediaPlayerå·¥å…·ç±»ï¼Œå¯ä»¥å¾—åˆ°ä¸€ä¸ªè£…è½½å¥½çš„MediaPlayer,å¹¶ä¸”è£…è½½å®Œæ¯•åŽä¼šè‡ªåŠ¨æ’­æ”¾ä¸€æ¬¡
+ *                                                           1.é¦–å…ˆä¼šæ£€æŸ¥æœ¬åœ°æ˜¯å¦æœ‰æŒ‡å®šè·¯å¾„ï¼ˆè¯¥è·¯å¾„æœ‰é¡¹ç›®æ ¹ç›®å½•
+ *                                                           +voice+ç½‘ç»œè·¯å¾„çš„æ–‡ä»¶åç»„æˆï¼‰
+ *                                                           çš„éŸ³é¢‘æ–‡ä»¶ 2.å¦‚æžœå­˜åœ¨ï¼Œç›´æŽ¥è£…è½½æ’­æ”¾
+ *                                                           3.å¦‚æžœä¸å­˜åœ¨ï¼Œåˆ™å¼‚æ­¥æ’­æ”¾ç½‘ç»œéŸ³é¢‘
  */
 public class MediaPlayerUtil {
 
@@ -51,83 +51,83 @@ public class MediaPlayerUtil {
     }
 
     public void initCountDownPlayer(final String voiceUrl,final Handler handler, final String time,final TextView tv) {
-        // Èç¹ûsd¿¨ÄÜÓÃ£¬²¥·Åsd¿¨ÉÏµÄÎÄ¼þ
-    			ttv=tv;
-                try {
-                    player = player == null ? new MediaPlayer() : player;
-                    player.setOnCompletionListener(new OnCompletionListener() {
-                        
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            // TODO Auto-generated method stub
-                        	 Message msg = new Message();
-                             msg.what = 1;
-                             handler.sendMessage(msg);
-                            releasePlayer();
-                           
-                        }
-                    });
-                    player.setDataSource(voiceUrl);  
-                    player.prepare();
-                    player.start();
-                    int durtime = player.getDuration();
-                    String dddtime=secToTime(durtime/1000);
-                    ttime=dddtime;
-                    System.out.println("zzzz"+durtime+"xxxx"+dddtime);
-                    UpdateVoiceTimeThread.getInstance(dddtime,tv).start();
+        // å¦‚æžœsdå¡èƒ½ç”¨ï¼Œæ’­æ”¾sdå¡ä¸Šçš„æ–‡ä»¶
+        ttv=tv;
+        try {
+            player = player == null ? new MediaPlayer() : player;
+            player.setOnCompletionListener(new OnCompletionListener() {
 
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    // TODO Auto-generated method stub
+                    Message msg = new Message();
+                    msg.what = 1;
+                    handler.sendMessage(msg);
+                    releasePlayer();
+
                 }
-            
-            
+            });
+            player.setDataSource(voiceUrl);
+            player.prepare();
+            player.start();
+            int durtime = player.getDuration();
+            String dddtime=secToTime(durtime/1000);
+            ttime=dddtime;
+            System.out.println("zzzz"+durtime+"xxxx"+dddtime);
+            UpdateVoiceTimeThread.getInstance(dddtime,tv).start();
 
-//        //²¥·ÅÍøÂçÎÄ¼þ
-//        else {
-//            playNetVoiceWithCountDown(voiceUrl, time,tv);
-//        }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+
+        //        //æ’­æ”¾ç½‘ç»œæ–‡ä»¶
+        //        else {
+        //            playNetVoiceWithCountDown(voiceUrl, time,tv);
+        //        }
     }
-    
+
     private void playNetVoiceWithCountDown(final String voiceUrl,final String time,final TextView tv){
-        // Èç¹ûsd¿¨²»ÄÜÓÃ£¬Ö±½Ó²¥·Å¾W½jÎÄ¼þ
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            // TODO Auto-generated method stub
-                            Uri uri = Uri.parse(voiceUrl);
-                            player = player == null ? MediaPlayer.create(context, uri)
-                                    : player;
-                            player.setOnCompletionListener(new OnCompletionListener() {
-                                
-                                @Override
-                                public void onCompletion(MediaPlayer mp) {
-                                    // TODO Auto-generated method stub
-                                    UpdateVoiceTimeThread.getInstance( time,tv).stop();
-                                    
-                                }
-                            });
-                            player.setOnPreparedListener(new OnPreparedListener() {
+        // å¦‚æžœsdå¡ä¸èƒ½ç”¨ï¼Œç›´æŽ¥æ’­æ”¾ç¶²çµ¡æ–‡ä»¶
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                Uri uri = Uri.parse(voiceUrl);
+                player = player == null ? MediaPlayer.create(context, uri)
+                        : player;
+                player.setOnCompletionListener(new OnCompletionListener() {
 
-                                @Override
-                                public void onPrepared(MediaPlayer mp) {
-                                    // TODO Auto-generated method stub
-                                    player.start();
-                                    
-                                    UpdateVoiceTimeThread.getInstance( time,tv).start();
-                                    Message msg = handler.obtainMessage();
-                                    msg.obj = player;
-                                    msg.what = 10;
-                                    handler.sendMessage(msg);
-                                }
-                            });
-                        }
-                    }).start();
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        // TODO Auto-generated method stub
+                        UpdateVoiceTimeThread.getInstance( time,tv).stop();
+
+                    }
+                });
+                player.setOnPreparedListener(new OnPreparedListener() {
+
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        // TODO Auto-generated method stub
+                        player.start();
+
+                        UpdateVoiceTimeThread.getInstance( time,tv).start();
+                        Message msg = handler.obtainMessage();
+                        msg.obj = player;
+                        msg.what = 10;
+                        handler.sendMessage(msg);
+                    }
+                });
+            }
+        }).start();
 
     }
-    
-  /**
-     * ÏÔÊ¾ÎÞ±ß¿òÍ¸Ã÷µÄprogressdialog
+
+    /**
+     * æ˜¾ç¤ºæ— è¾¹æ¡†é€æ˜Žçš„progressdialog
      */
     private void showProgress() {
         pd = new ProgressDialog(context);
@@ -136,7 +136,7 @@ public class MediaPlayerUtil {
     }
 
     /**
-     * Òþ²ØÎÞ±ß¿òÍ¸Ã÷µÄprogressdialog
+     * éšè—æ— è¾¹æ¡†é€æ˜Žçš„progressdialog
      */
     private void dissmissProgress() {
         if (pd == null) {
@@ -153,48 +153,48 @@ public class MediaPlayerUtil {
             player.release();
             player = null;
         }
-//        if (pd != null) {
-//            pd.dismiss();
-//            pd = null;
-//        }
+        //        if (pd != null) {
+        //            pd.dismiss();
+        //            pd = null;
+        //        }
         UpdateVoiceTimeThread.getInstance(ttime, ttv).stop();
         context = null;
         instance = null;
     }
 
     /**
-     * Ö»ÓÐµç»°À´ÁËÖ®ºó²ÅÔÝÍ£ÒôÀÖµÄ²¥·Å
+     * åªæœ‰ç”µè¯æ¥äº†ä¹‹åŽæ‰æš‚åœéŸ³ä¹çš„æ’­æ”¾
      */
     static class MyPhoneListener extends PhoneStateListener {
         @Override
         public void onCallStateChanged(int state, String incomingNumber) {
             switch (state) {
-            case TelephonyManager.CALL_STATE_RINGING:// µç»°À´ÁË
-                if (instance!=null) {
-                    instance.callIsComing();
-                }
-                break;
-            case TelephonyManager.CALL_STATE_IDLE: // Í¨»°½áÊø
-                if (instance!=null) {
-                    instance.callIsDown();
-                }
-                break;
+                case TelephonyManager.CALL_STATE_RINGING:// ç”µè¯æ¥äº†
+                    if (instance!=null) {
+                        instance.callIsComing();
+                    }
+                    break;
+                case TelephonyManager.CALL_STATE_IDLE: // é€šè¯ç»“æŸ
+                    if (instance!=null) {
+                        instance.callIsDown();
+                    }
+                    break;
             }
         }
     }
 
     /**
-     * À´µç»°ÁË
+     * æ¥ç”µè¯äº†
      */
     public void callIsComing() {
         if (player.isPlaying()) {
-            playPosition = player.getCurrentPosition();// »ñµÃµ±Ç°²¥·ÅÎ»ÖÃ
+            playPosition = player.getCurrentPosition();// èŽ·å¾—å½“å‰æ’­æ”¾ä½ç½®
             player.stop();
         }
     }
 
     /**
-     * Í¨»°½áÊø
+     * é€šè¯ç»“æŸ
      */
     public void callIsDown() {
         if (playPosition > 0) {
@@ -202,47 +202,47 @@ public class MediaPlayerUtil {
             playPosition = 0;
         }
     }
-    
-    
-    public static String secToTime(int time) {  
-        String timeStr = null;  
-        int hour = 0;  
-        int minute = 0;  
-        int second = 0;  
-        if (time <= 0)  
-            return "00:00";  
-        else {  
-            minute = time / 60;  
-            if (minute < 60) {  
-                second = time % 60;  
-                timeStr = unitFormat(minute) + ":" + unitFormat(second);  
-            } else {  
-                hour = minute / 60;  
-                if (hour > 99)  
-                    return "99:59:59";  
-                minute = minute % 60;  
-                second = time - hour * 3600 - minute * 60;  
-                timeStr = unitFormat(hour) + ":" + unitFormat(minute) + ":" + unitFormat(second);  
-            }  
-        }  
-        return timeStr;  
-    }  
-  
-    public static String unitFormat(int i) {  
-        String retStr = null;  
-        if (i >= 0 && i < 10)  
-            retStr = "0" + Integer.toString(i);  
-        else  
-            retStr = "" + i;  
-        return retStr;  
+
+
+    public static String secToTime(int time) {
+        String timeStr = null;
+        int hour = 0;
+        int minute = 0;
+        int second = 0;
+        if (time <= 0)
+            return "00:00";
+        else {
+            minute = time / 60;
+            if (minute < 60) {
+                second = time % 60;
+                timeStr = unitFormat(minute) + ":" + unitFormat(second);
+            } else {
+                hour = minute / 60;
+                if (hour > 99)
+                    return "99:59:59";
+                minute = minute % 60;
+                second = time - hour * 3600 - minute * 60;
+                timeStr = unitFormat(hour) + ":" + unitFormat(minute) + ":" + unitFormat(second);
+            }
+        }
+        return timeStr;
     }
-    
-    
-    
-    
-    
-    
-   
+
+    public static String unitFormat(int i) {
+        String retStr = null;
+        if (i >= 0 && i < 10) {
+            retStr = "0" + Integer.toString(i);
+        }
+        else {
+            retStr = "" + i;
+        }
+        return retStr;
     }
 
 
+
+
+
+
+
+}
