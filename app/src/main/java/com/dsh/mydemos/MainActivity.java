@@ -4,16 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.dsh.mydemos.activity.AudioMp3Activity;
 import com.dsh.mydemos.activity.IntentServiceActivity;
 import com.dsh.mydemos.activity.MyCameraActivity;
+import com.dsh.mydemos.activity.QRCodeActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
@@ -27,7 +26,8 @@ public class MainActivity extends BaseActivity {
     Button mIntentservice;
     @BindView(R.id.mp3)
     Button mMp3;
-
+    @BindView(R.id.qrcode)
+    Button qrcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
         mMycamera.setOnClickListener(this);
         mIntentservice.setOnClickListener(this);
         mMp3.setOnClickListener(this);
+        qrcode.setOnClickListener(this);
     }
 
     @Override
@@ -76,6 +77,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.mp3:
                 startActivity(new Intent(MainActivity.this, AudioMp3Activity.class));
+                break;
+            case R.id.qrcode:
+                startActivity(new Intent(MainActivity.this, QRCodeActivity.class));
                 break;
 
             default:

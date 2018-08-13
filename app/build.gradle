@@ -1,21 +1,28 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'//bufferknife相关
+//apply plugin: 'com.neenbedankt.android-apt'//bufferknife相关
 apply plugin: 'org.greenrobot.greendao'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    compileSdkVersion compile_sdk_version
 
-
+//    defaultConfig {
+//        applicationId "com.dsh.mydemos"
+//        minSdkVersion 19
+//        targetSdkVersion 22
+//        versionCode 1
+//        versionName "1.0"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//    }
 
     defaultConfig {
         applicationId "com.dsh.mydemos"
-        minSdkVersion 19
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+        vectorDrawables.useSupportLibrary = true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -35,16 +42,22 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'com.jakewharton:butterknife:8.1.0'//bufferknife相关
-    apt 'com.jakewharton:butterknife-compiler:8.1.0'//bufferknife相关
-    //FlowLayout
+    implementation "com.android.support:appcompat-v7:$android_support"
+    //权限访问
+    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //二维码扫描库
+    implementation project(':dshzxinglib')
+    //bufferknife
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //FlowLayout 搜索记录
     compile 'com.zhy:flowlayout-lib:1.0.3'
     //数据库
     compile 'org.greenrobot:greendao:3.2.0'
-//    //数据库升级辅助类
+    //数据库升级辅助类
     compile 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.4.0'
 }

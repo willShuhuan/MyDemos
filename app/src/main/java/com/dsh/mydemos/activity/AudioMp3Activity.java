@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
 import com.dsh.mydemos.R;
 import com.dsh.mydemos.base.BaseActivity;
 import com.dsh.mydemos.player.MediaPlayerUtil;
@@ -37,7 +38,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Adam on 2018/4/3.

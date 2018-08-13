@@ -7,9 +7,9 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 
 /**
- * 2014-3-26œ¬ŒÁ12:28:44
- * 2017-3-27 DSH∏ƒ‘Ï¡À“ªœ¬
- * 
+ * 2014-3-26‰∏ãÂçà12:28:44
+ * 2017-3-27 DSHÊîπÈÄ†‰∫Ü‰∏Ä‰∏ã
+ *
  * @author:crazyhelloworld.Mr-zz
  * @todo:
  */
@@ -41,9 +41,9 @@ public class UpdateVoiceTimeThread {
         }
         return instance;
     }
-    
+
     private UpdateVoiceTimeThread(){};
-    
+
     private static CountDownTimer getTimer(){
         if (cdt!=null) {
             cdt.cancel();
@@ -54,22 +54,22 @@ public class UpdateVoiceTimeThread {
             @Override
             public void onTick(long millisUntilFinished) {
                 // TODO Auto-generated method stub
-            	 tvv.setVisibility(View.VISIBLE);
+                tvv.setVisibility(View.VISIBLE);
                 tvv.setText(sdf.format(millisUntilFinished));
                 l = l - TIME_CHANGE_DELAY;
             }
 
             @Override
             public void onFinish() {
-            	tvv.setVisibility(View.GONE);
+                tvv.setVisibility(View.GONE);
                 tvv.setText(time);
 
             }
-            
+
         };
         return cdt;
     }
-    
+
     public void start() {
         getTimer();
         cdt.start();

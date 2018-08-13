@@ -47,6 +47,13 @@
         android:textAllCaps="false"
         android:text="AudioRecorder+Lame  MP3录音"/>
 
+    <Button
+        android:id="@+id/qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="zxing二维码扫描及生成"/>
+
 
 
 

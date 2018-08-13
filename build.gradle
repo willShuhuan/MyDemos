@@ -1,13 +1,31 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+
+    ext {
+        /*sdk and version*/
+        compile_sdk_version = 26
+        build_tools_version = '26.0.1'
+        min_sdk_version = 19
+        target_sdk_version = 26
+        constraint_version = '1.1.0'
+        version_code = 100
+        version_name = '1.0.0'
+        /*support*/
+        android_support = '26.0.1'
+
+    }
+
+
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'//bufferknife相关
+        classpath 'com.android.tools.build:gradle:3.0.1'
+//        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'//bufferknife相关
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -16,6 +34,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
         maven { url "https://jitpack.io" }//使用数据库升级辅助GreenDaoUpgradeHelper时添加
     }
 }
