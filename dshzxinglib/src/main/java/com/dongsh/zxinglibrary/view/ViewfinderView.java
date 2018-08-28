@@ -1,5 +1,5 @@
 
-package com.yzq.zxinglibrary.view;
+package com.dongsh.zxinglibrary.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -15,9 +15,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.zxing.ResultPoint;
-import com.yzq.zxinglibrary.R;
-import com.yzq.zxinglibrary.bean.ZxingConfig;
-import com.yzq.zxinglibrary.camera.CameraManager;
+import com.dongsh.zxinglibrary.R;
+import com.dongsh.zxinglibrary.bean.ZxingConfig;
+import com.dongsh.zxinglibrary.camera.CameraManager;
 import java.util.ArrayList;
 import java.util.List;
 

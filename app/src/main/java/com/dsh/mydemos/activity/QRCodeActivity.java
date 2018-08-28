@@ -10,10 +10,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,13 +25,10 @@ import com.google.zxing.WriterException;
 import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
 import com.yanzhenjie.permission.Permission;
-import com.yzq.zxinglibrary.android.CaptureActivity;
-import com.yzq.zxinglibrary.bean.ZxingConfig;
-import com.yzq.zxinglibrary.common.Constant;
-import com.yzq.zxinglibrary.encode.CodeCreator;
-import java.io.ByteArrayOutputStream;
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
+import com.dongsh.zxinglibrary.android.CaptureActivity;
+import com.dongsh.zxinglibrary.bean.ZxingConfig;
+import com.dongsh.zxinglibrary.common.Constant;
+import com.dongsh.zxinglibrary.encode.CodeCreator;
 import java.util.List;
 
 /**

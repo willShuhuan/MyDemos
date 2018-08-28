@@ -13,6 +13,7 @@ import com.dsh.mydemos.activity.QRCodeActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
+import com.dsh.mydemos.mvp.view.MVPLoginActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends BaseActivity {
     Button mMp3;
     @BindView(R.id.qrcode)
     Button qrcode;
+    @BindView(R.id.mvp) Button mvp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class MainActivity extends BaseActivity {
         mIntentservice.setOnClickListener(this);
         mMp3.setOnClickListener(this);
         qrcode.setOnClickListener(this);
+        mvp.setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +83,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.qrcode:
                 startActivity(new Intent(MainActivity.this, QRCodeActivity.class));
+                break;
+            case R.id.mvp:
+                startActivity(new Intent(MainActivity.this, MVPLoginActivity.class));
                 break;
 
             default:

@@ -1,7 +1,6 @@
-package com.yzq.zxinglibrary.decode;
+package com.dongsh.zxinglibrary.decode;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 import com.google.zxing.LuminanceSource;
 import com.google.zxing.PlanarYUVLuminanceSource;
@@ -156,7 +155,6 @@ public class MyPlanarYUVLuminanceSource extends LuminanceSource {
         bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
 
         return bitmap;
-
 
     }
 

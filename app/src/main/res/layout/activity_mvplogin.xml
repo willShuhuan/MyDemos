@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/tv_username"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:hint="用户名"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/tv_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:hint="密码"
+        android:gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="登录"
+        />
+    <ProgressBar
+        android:layout_marginTop="100dp"
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        />
+
+
+</LinearLayout>
