@@ -16,7 +16,6 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 /**
- * Created by yzq on 2017/10/17.
  * <p>
  * 解析二维码图片
  * 解析是耗时操作，要放在子线程

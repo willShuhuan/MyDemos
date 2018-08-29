@@ -55,8 +55,6 @@ public final class CaptureActivityHandler extends Handler {
                 activity.getViewfinderView()));
         decodeThread.start();
         state = State.SUCCESS;
-
-        // Start ourselves capturing previews and decoding.
         // 开始拍摄预览和解码
         this.cameraManager = cameraManager;
         cameraManager.startPreview();
@@ -72,7 +70,6 @@ public final class CaptureActivityHandler extends Handler {
                 break;
             case Constant.DECODE_SUCCEEDED:
                 // 解码成功
-
                 Bundle bundle = message.getData();
                 Bitmap barcode = bundle == null ? null :
                         (Bitmap) bundle.getParcelable(Constant.CODED_BITMAP);
@@ -100,6 +97,8 @@ public final class CaptureActivityHandler extends Handler {
             case Constant.FLASH_CLOSE:
                 activity.switchFlashImg(Constant.FLASH_CLOSE);
                 break;
+                default:
+                    break;
         }
     }
 

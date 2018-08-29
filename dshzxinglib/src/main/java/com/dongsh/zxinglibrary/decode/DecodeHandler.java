@@ -53,13 +53,14 @@ public final class DecodeHandler extends Handler {
         }
         switch (message.what) {
             case Constant.DECODE:
-
                 decode((byte[]) message.obj, message.arg1, message.arg2);
                 break;
             case Constant.QUIT:
                 running = false;
                 Looper.myLooper().quit();
                 break;
+                default:
+                    break;
         }
     }
 

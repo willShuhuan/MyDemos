@@ -19,6 +19,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +35,6 @@ import com.dongsh.zxinglibrary.view.ViewfinderView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
-
-/**
- * @author: yzq
- * @date: 2017/10/26 15:22
- * @declare :扫一扫
- */
 
 public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.Callback, View.OnClickListener {
 
@@ -93,6 +87,10 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(Color.BLACK);
         }
+        //全屏
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         /*先获取配置信息*/
         try {
@@ -155,6 +153,8 @@ public class CaptureActivity extends AppCompatActivity implements SurfaceHolder.
         } else {
             flashLightLayout.setVisibility(View.GONE);
         }
+
+
 
     }
 

@@ -7,7 +7,6 @@ import com.dsh.mydemos.mvp.bean.UserData;
  * createDate 2018/8/28
  * Email 785434788@qq.com
  * Description
- * Change Log
  */
 
 public interface ILoginView {

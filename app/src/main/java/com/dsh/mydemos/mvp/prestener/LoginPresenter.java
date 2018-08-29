@@ -12,8 +12,7 @@ import com.dsh.mydemos.mvp.view.ILoginView;
  * Created by dongshuhuan
  * createDate 2018/8/28
  * Email 785434788@qq.com
- * Description
- * Change Log
+ * Description presenter关联model与view
  */
 
 public class LoginPresenter {

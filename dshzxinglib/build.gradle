@@ -19,50 +19,19 @@ android {
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    api files('libs/core-3.3.0.jar')
+    //引用config.gradle中的依赖
     //implementation：仅仅将你引用到的此 module 在内部使用，而不将其接口暴露给外部
     implementation rootProject.ext.dependencies["appcompat-v7"]
-    implementation rootProject.ext.dependencies["support-v4"]
-    implementation rootProject.ext.dependencies["design"]
-    implementation rootProject.ext.dependencies["vector-drawable"]
     //api：通过你自己的接口将你引用到的 module 接口暴露出去供其他 module 使用，含义上实际与 compile 一致,使用时去掉'implementation fileTree'
     api rootProject.ext.dependencies["zxing"]
 
+     //或直接添加依赖
+//    api "com.google.zxing:core:3.3.0"
 //    implementation "com.android.support:appcompat-v7:26.0.2"
-//    implementation "com.android.support:design:26.0.2"
-//    implementation "com.android.support:support-v4:26.0.2"
-//    implementation "com.android.support:support-vector-drawable:26.0.2"
-//    api 'com.google.zxing:core:3.3.0'
+
+
+
 
 }
 
-//// 指定编码
-//tasks.withType(JavaCompile) {
-//    options.encoding = "UTF-8"
-//}
 
-// 打包源码
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
-
-//制作文档
-//task javadoc(type: Javadoc) {
-//    failOnError  false
-//    source = android.sourceSets.main.java.sourceFiles
-//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//    classpath += configurations.compile
-//}
-
-// 打包文档
-//task javadocJar(type: Jar, dependsOn: javadoc) {
-//    classifier = 'javadoc'
-//    from javadoc.destinationDir
-//}
-
-artifacts {
-    archives sourcesJar
-//    archives javadocJar
-}

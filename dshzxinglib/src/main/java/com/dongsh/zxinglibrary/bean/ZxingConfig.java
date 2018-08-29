@@ -7,8 +7,6 @@ import com.dongsh.zxinglibrary.R;
 import java.io.Serializable;
 
 /**
- * @author: yzq
- * @date: 2017/10/27 14:48
  * @declare :zxing配置类
  */
 
