@@ -1,6 +1,6 @@
 package com.dsh.mydemos.mvp.view;
 
-import com.dsh.mydemos.mvp.bean.UserData;
+import com.dsh.mydemos.mvp.model.bean.UserData;
 
 /**
  * Created by dongshuhuan

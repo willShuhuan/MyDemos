@@ -1,8 +1,7 @@
 package com.dsh.mydemos.mvp.model;
 
-import android.os.Handler;
-import com.dsh.mydemos.mvp.bean.LoginParam;
-import com.dsh.mydemos.mvp.bean.UserData;
+import com.dsh.mydemos.mvp.model.bean.LoginParam;
+import com.dsh.mydemos.mvp.model.bean.UserData;
 
 /**
  * Created by dongshuhuan

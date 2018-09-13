@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--按压状态下，前景变暗-->
+    <item android:state_pressed="true">
+        <layer-list>
+            <item android:left="4dp" android:top="4dp">
+                <shape>
+                    <solid android:color="#F0F0F0" />
+                    <corners android:radius="10dip" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <!--非按压状态下-->
+    <item>
+        <layer-list>
+            <!-- 999渐变隐形外层 -->
+            <item
+                android:left="0dp"
+                android:top="0dp">
+                <shape>
+                    <solid android:color="#999999" />
+                    <corners android:radius="10dp" />
+                </shape>
+            </item>
+            <!-- 777渐变阴影中层 -->
+            <item
+                android:left="0dp"
+                android:top="0dp"
+                android:bottom="2dp"
+                android:right="1dp">
+                <shape>
+                    <solid android:color="#777777" />
+                    <corners android:radius="10dp" />
+                </shape>
+            </item>
+            <!-- 555渐变阴影内层 -->
+            <item
+                android:left="0dp"
+                android:top="0dp"
+                android:bottom="3dp"
+                android:right="2dp">
+                <shape>
+                    <solid android:color="#555555" />
+                    <corners android:radius="10dp" />
+                </shape>
+            </item>
+            <!-- 白色前景 -->
+            <item
+                android:left="0dp"
+                android:top="0dp"
+                android:bottom="4dp"
+                android:right="3dp">
+                <shape>
+                    <solid android:color="#FFFFFF" />
+                    <corners android:radius="10dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

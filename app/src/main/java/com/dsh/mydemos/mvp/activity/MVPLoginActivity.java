@@ -1,4 +1,4 @@
-package com.dsh.mydemos.mvp.view;
+package com.dsh.mydemos.mvp.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,9 +12,10 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.dsh.mydemos.R;
-import com.dsh.mydemos.mvp.bean.LoginParam;
-import com.dsh.mydemos.mvp.bean.UserData;
+import com.dsh.mydemos.mvp.model.bean.LoginParam;
+import com.dsh.mydemos.mvp.model.bean.UserData;
 import com.dsh.mydemos.mvp.prestener.LoginPresenter;
+import com.dsh.mydemos.mvp.view.ILoginView;
 
 /**
  * Created by dongshuhuan

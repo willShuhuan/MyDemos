@@ -1,6 +1,6 @@
 package com.dsh.mydemos.mvp.model;
 
-import com.dsh.mydemos.mvp.bean.LoginParam;
+import com.dsh.mydemos.mvp.model.bean.LoginParam;
 
 /**
  * Created by dongshuhuan

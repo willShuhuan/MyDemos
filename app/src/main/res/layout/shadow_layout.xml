@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:background="@drawable/shadow_shape"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linearlayout阴影， 5.0以下
+            layer-list图层"
+            android:textSize="22sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:background="@drawable/ll_shadow_shape"
+        android:elevation="5dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linearlayout阴影， 5.0以上
+            shape+elevation"
+            android:textSize="22sp"
+            />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardBackgroundColor="@color/white"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="CardView阴影， 5.0以上 cardXxxx圆角阴影"
+            android:gravity="center"
+            android:textSize="22sp"
+            />
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

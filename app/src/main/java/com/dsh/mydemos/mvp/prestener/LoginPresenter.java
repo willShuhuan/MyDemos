@@ -1,10 +1,10 @@
 package com.dsh.mydemos.mvp.prestener;
 
 import android.os.Handler;
-import com.dsh.mydemos.mvp.bean.UserData;
+import com.dsh.mydemos.mvp.model.bean.UserData;
 import com.dsh.mydemos.mvp.model.ILoginListener;
 import com.dsh.mydemos.mvp.model.LoginModel;
-import com.dsh.mydemos.mvp.bean.LoginParam;
+import com.dsh.mydemos.mvp.model.bean.LoginParam;
 import com.dsh.mydemos.mvp.view.ILoginView;
 
 

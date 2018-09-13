@@ -53,6 +53,11 @@ dependencies {
     implementation rootProject.ext.dependencies["greendao"]
     implementation rootProject.ext.dependencies["GreenDaoUpgradeHelper"]
     implementation rootProject.ext.dependencies["multidex"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+
+
+    implementation "com.android.support:cardview-v7:26.0.2"
+
 //    implementation rootProject.ext.dependencies["zxing"]
 
 

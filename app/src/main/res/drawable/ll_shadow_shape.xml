@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <!-- 设置圆角弹出框矩形  -->
+    <corners android:radius="5dip" />
+    <!-- 边框颜色 -->
+    <stroke
+        android:width="0.5dip"
+        android:color="#dddddd" />
+    <!-- 背景填充色 -->
+    <solid android:color="#fff" />
+
+</shape>

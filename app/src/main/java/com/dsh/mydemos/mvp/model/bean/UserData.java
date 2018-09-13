@@ -1,4 +1,4 @@
-package com.dsh.mydemos.mvp.bean;
+package com.dsh.mydemos.mvp.model.bean;
 
 /**
  * Created by dongshuhuan
