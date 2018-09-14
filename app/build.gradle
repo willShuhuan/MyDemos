@@ -62,6 +62,7 @@ dependencies {
     implementation rootProject.ext.dependencies["GreenDaoUpgradeHelper"]
     implementation rootProject.ext.dependencies["multidex"]
     implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["rxpermissions2"]
 
 
 //    implementation rootProject.ext.dependencies["zxing"]

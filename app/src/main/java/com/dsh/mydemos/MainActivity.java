@@ -1,7 +1,9 @@
 package com.dsh.mydemos;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import butterknife.BindView;
@@ -14,8 +16,21 @@ import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
 import com.dsh.mydemos.mvp.activity.MVPLoginActivity;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 
 public class MainActivity extends BaseActivity {
+
+    final String[] permissions = {
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.CAMERA,
+            Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+    };
+
+    private RxPermissions rxPermissions;
 
     @BindView(R.id.rxjava)
     Button mRxjava;
@@ -60,6 +75,33 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initData() {
+        rxPermissions = new RxPermissions(this);
+        rxPermissions.request(permissions)
+                .subscribe(new Observer<Boolean>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(Boolean aBoolean) {
+                        if (!aBoolean) {
+                            Log.e(MainActivity.class.getName(),
+                                    "We highly recommend that you need to grant the " +
+                                            "special permissions before initializing the SDK, otherwise some functions will not work");
+                        }
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        finish();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
 
     }
 

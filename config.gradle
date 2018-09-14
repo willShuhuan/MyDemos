@@ -50,6 +50,7 @@ ext {
             "junit"                     : "junit:junit:4.12",
             //zxing谷歌二维码扫描
             "zxing"                     : "com.google.zxing:core:3.3.0",
+            "rxpermissions2"            : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
 
 
     ]
