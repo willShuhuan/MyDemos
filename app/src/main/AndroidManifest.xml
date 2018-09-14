@@ -45,7 +45,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.QRCodeActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".mvp.view.MVPLoginActivity"
+        <activity android:name=".mvp.activity.MVPLoginActivity"
             android:screenOrientation="portrait"/>
         <service android:name=".service.MyIntentService"/>
         <service android:name=".service.AudioMp3RecoderService3">

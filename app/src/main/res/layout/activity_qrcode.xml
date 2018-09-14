@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#999999"
     tools:context="com.dsh.mydemos.activity.QRCodeActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -78,6 +79,20 @@
 
         />
 
+    <Button
+        android:id="@+id/enwcodeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="生成白色的二维码" />
+
+
+    <ImageView
+        android:id="@+id/contentwIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        />
 
 
 

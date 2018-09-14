@@ -7,6 +7,7 @@ android {
     buildToolsVersion rootProject.ext.android["build_tools_version"]
 
 
+
     defaultConfig {
         applicationId "com.dsh.mydemos"
         minSdkVersion rootProject.ext.android["min_sdk_version"]
@@ -15,6 +16,13 @@ android {
         versionName rootProject.ext.android["version_name"]
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+
     }
 
     buildTypes {
@@ -55,8 +63,6 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     implementation rootProject.ext.dependencies["cardview-v7"]
 
-
-    implementation "com.android.support:cardview-v7:26.0.2"
 
 //    implementation rootProject.ext.dependencies["zxing"]
 

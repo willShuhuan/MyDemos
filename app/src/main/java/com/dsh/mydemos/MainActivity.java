@@ -13,7 +13,7 @@ import com.dsh.mydemos.activity.QRCodeActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
-import com.dsh.mydemos.mvp.view.MVPLoginActivity;
+import com.dsh.mydemos.mvp.activity.MVPLoginActivity;
 
 public class MainActivity extends BaseActivity {
 

@@ -45,7 +45,9 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
     private TextView result;
     private EditText contentEt;
     private Button encodeBtn;
+    private Button encodewBtn;
     private ImageView contentIv;
+    private ImageView contentwIv;
     private ImageView resultIv;
     private Toolbar toolbar;
     private int REQUEST_CODE_SCAN = 111;
@@ -76,9 +78,12 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
         contentEt = findViewById(R.id.contentEt);
         /*生成按钮*/
         encodeBtn = findViewById(R.id.encodeBtn);
+        encodewBtn = findViewById(R.id.enwcodeBtn);
         encodeBtn.setOnClickListener(this);
+        encodewBtn.setOnClickListener(this);
         /*生成的图片*/
         contentIv = findViewById(R.id.contentIv);
+        contentwIv = findViewById(R.id.contentwIv);
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -151,7 +156,7 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
                 }
                 try {
                     int wh = UIUtil.dip2px(QRCodeActivity.this,200);
-                    bitmap = CodeCreator.createQRCode(contentEtString, wh, wh, null);
+                    bitmap = CodeCreator.createQRCode(contentEtString, wh, wh, null, false);
 
                 } catch (WriterException e) {
                     e.printStackTrace();
@@ -174,13 +179,33 @@ public class QRCodeActivity extends BaseActivity implements View.OnClickListener
                 try {
                     Bitmap logo = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
                     int w = UIUtil.dip2px(QRCodeActivity.this,200);
-                    bitmap = CodeCreator.createQRCode(contentEtString, w, w, getBitmap(QRCodeActivity.this,R.mipmap.ic_launcher));
+                    bitmap = CodeCreator.createQRCode(contentEtString, w, w, getBitmap(QRCodeActivity.this,R.mipmap.ic_launcher),
+                            false);
 
                 } catch (WriterException e) {
                     e.printStackTrace();
                 }
                 if (bitmap != null) {
                     contentIvWithLogo.setImageBitmap(bitmap);
+                }
+
+                break;
+
+            case R.id.enwcodeBtn:
+                contentEtString = contentEt.getText().toString().trim();
+                if (TextUtils.isEmpty(contentEtString)) {
+                    Toast.makeText(this, "请输入要生成二维码图片的字符串", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                try {
+                    int wh = UIUtil.dip2px(QRCodeActivity.this,200);
+                    bitmap = CodeCreator.createQRCode(contentEtString, wh, wh, null,true);
+
+                } catch (WriterException e) {
+                    e.printStackTrace();
+                }
+                if (bitmap != null) {
+                    contentwIv.setImageBitmap(bitmap);
                 }
 
                 break;

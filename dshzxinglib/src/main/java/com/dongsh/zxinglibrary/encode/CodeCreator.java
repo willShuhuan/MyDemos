@@ -18,7 +18,7 @@ public class CodeCreator {
 
 
     /*生成二维码*/
-    public static Bitmap createQRCode(String content, int w, int h,Bitmap logo) throws WriterException {
+    public static Bitmap createQRCode(String content, int w, int h, Bitmap logo, boolean isWhite) throws WriterException {
 
 
         if (TextUtils.isEmpty(content)) {
@@ -67,18 +67,35 @@ public class CodeCreator {
                 if(x >= offsetX && x < offsetX + logoW && y>= offsetY && y < offsetY + logoH){
                     int pixel = logoBitmap.getPixel(x-offsetX,y-offsetY);
                     if(pixel == 0){
-                        if(matrix.get(x, y)){
-                            pixel = 0xff000000;
-                        }else{
-                            pixel = 0xffffffff;
+                        if (isWhite){
+                            if(matrix.get(x, y)){
+                                pixel = 0xffffffff;
+                            }else{
+                                pixel = 0x00000000;
+                            }
+                        }else {
+                            if(matrix.get(x, y)){
+                                pixel = 0xff000000;
+                            }else{
+                                pixel = 0xffffffff;
+                            }
                         }
+
                     }
                     pixels[y * w + x] = pixel;
                 }else{
-                    if (matrix.get(x, y)) {
-                        pixels[y * w + x] = 0xff000000;
-                    } else {
-                        pixels[y * w + x] = 0xffffffff;
+                    if (isWhite){
+                        if (matrix.get(x, y)) {
+                            pixels[y * w + x] = 0xffffffff;
+                        } else {
+                            pixels[y * w + x] = 0x00000000;
+                        }
+                    }else {
+                        if (matrix.get(x, y)) {
+                            pixels[y * w + x] = 0xff000000;
+                        } else {
+                            pixels[y * w + x] = 0xffffffff;
+                        }
                     }
                 }
             }

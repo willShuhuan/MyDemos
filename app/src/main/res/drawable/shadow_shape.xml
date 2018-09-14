@@ -52,6 +52,11 @@
                 android:bottom="4dp"
                 android:right="3dp">
                 <shape>
+                    <!--<gradient-->
+                        <!--android:angle="270"-->
+                        <!--android:endColor="#666666"-->
+                        <!--android:startColor="#ffffff"-->
+                        <!--/>-->
                     <solid android:color="#FFFFFF" />
                     <corners android:radius="10dp" />
                 </shape>
