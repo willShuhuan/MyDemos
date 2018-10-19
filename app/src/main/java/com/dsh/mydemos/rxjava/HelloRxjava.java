@@ -30,8 +30,8 @@ public class HelloRxjava  {
         //rx3();//函数响应式编程
         //rx4();//函数响应式编程可接收异常信息
         //rx5(list);//发送数据序列
-        //rx6(list);//通过fromIterable操作符对其进行简化
         //rx7(list);//Disposable
+        //rx6(list);//通过fromIterable操作符对其进行简化
         rx8();//Disposable
 
     }
