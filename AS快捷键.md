@@ -33,7 +33,7 @@
 提示参数类型|	Parameter Info|	command + P	|ctrl + P
 查找替换|	Replace	|command + R|	ctrl + R
 查找命令|	Find Action	|command + shift + A	|ctrl + shift + A
-拷贝文件路径v	Copy Paths|	command + shift + C	|ctrl + shift + C
+拷贝文件路径|	Copy Paths|	command + shift + C	|ctrl + shift + C
 移动代码块|	Move Statement Up/Down|	command + shift + down/up	|ctrl + shift + down/up
 代码补全|	Complete Current Statement|	command + shift + enter	|ctrl + shift + enter
 全路径查找|	Find in Path	|command + shift + F|	ctrl + shift + F
