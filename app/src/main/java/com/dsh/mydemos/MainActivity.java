@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.dsh.mydemos.activity.AudioMp3Activity;
@@ -71,6 +72,7 @@ public class MainActivity extends BaseActivity {
         mMp3.setOnClickListener(this);
         qrcode.setOnClickListener(this);
         mvp.setOnClickListener(this);
+        
     }
 
     @Override
@@ -88,6 +90,7 @@ public class MainActivity extends BaseActivity {
                             Log.e(MainActivity.class.getName(),
                                     "We highly recommend that you need to grant the " +
                                             "special permissions before initializing the SDK, otherwise some functions will not work");
+
                         }
 
                     }
