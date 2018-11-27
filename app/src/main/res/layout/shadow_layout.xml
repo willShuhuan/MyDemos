@@ -4,28 +4,46 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/gray"
-    android:gravity="center"
     android:orientation="vertical"
     >
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
     <LinearLayout
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+    <LinearLayout
+        android:layout_width="320dp"
         android:layout_height="140dp"
         android:background="@drawable/shadow_shape"
         android:gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:text="Linearlayout阴影， 5.0以下
-            layer-list图层"
-            android:textSize="22sp"
+            android:padding="5dp"
+            android:text="Linearlayout阴影， 5.0以下layer-list图层，图片贴边有尖角"
+            android:textSize="18sp"
             />
+
+        <ImageView
+            android:id="@+id/coverll"
+            android:layout_width="96dp"
+            android:layout_height="136dp"
+            android:background="@color/red"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="280dp"
+    <RelativeLayout
+        android:layout_width="320dp"
         android:layout_height="140dp"
         android:background="@drawable/ll_shadow_shape"
         android:elevation="5dp"
@@ -33,33 +51,260 @@
         android:gravity="center">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Linearlayout阴影， 5.0以上
-            shape+elevation"
-            android:textSize="22sp"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="Linearlayout阴影，5.0以上，shape+elevation，图片贴边有尖角"
+            android:textSize="18sp"
             />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/coverrl"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/oriange"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
 
     <android.support.v7.widget.CardView
-        android:layout_width="280dp"
+        android:id="@+id/cardview"
+        android:layout_width="320dp"
         android:layout_height="140dp"
         android:layout_marginTop="20dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
+        app:cardElevation="2dp"
         app:cardBackgroundColor="@color/white"
         >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CardView"
+            android:layout_gravity="top|left"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="CardView阴影， 5.0以上图片贴边无尖角,5.0以下要代码控制内间距和图片尖角"
+            android:layout_gravity="center_vertical"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/cover"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:text="CardView阴影， 5.0以上 cardXxxx圆角阴影"
-            android:gravity="center"
-            android:textSize="22sp"
+            android:layout_gravity="right"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-11-21"
+            android:layout_gravity="bottom|left"
+            android:layout_margin="8dp"
+            android:textSize="14sp"
+            android:textColor="@color/grey"
             />
 
     </android.support.v7.widget.CardView>
 
+    <com.dsh.mydemos.view.RCRelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        app:round_corner="10dp"
+        app:clip_background="true"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RCRelativeLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="8dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            android:text="开源控件RCRelativelayout： 直接加载图片，无需处理图片圆角"
+            android:textSize="13sp"
+            />
+
+        <ImageView
+            android:id="@+id/coverrcl"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="#ff850d"
+            android:layout_gravity="right"
+            android:layout_alignParentRight="true"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2018-11-21"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:textSize="14sp"
+            android:textColor="@color/grey"
+            />
+
+    </com.dsh.mydemos.view.RCRelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardview2"
+            android:layout_width="320dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="@color/white"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CardView+RCImageView"
+                android:layout_gravity="top|left"
+                android:layout_margin="8dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="CardView+RCImageView： xml或代码控制图片圆角"
+                android:layout_gravity="center_vertical"
+                android:textSize="13sp"
+                />
+
+            <com.dsh.mydemos.view.RCImageView
+                android:id="@+id/coverrci"
+                android:layout_width="100dp"
+                app:round_corner_top_right="10dp"
+                app:round_corner_bottom_right="10dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-11-21"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/grey"
+                />
+
+        </android.support.v7.widget.CardView>
+
+        <com.dsh.mydemos.view.RoundAngleFrameLayout
+            android:id="@+id/raflayout"
+            android:layout_width="320dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_roundcorner"
+            app:radius="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RoundAngleFrameLayout"
+                android:layout_gravity="top|left"
+                android:layout_margin="8dp"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="RoundAngleFrameLayout： 直接加载图片"
+                android:layout_gravity="center_vertical"
+                android:textSize="13sp"
+                />
+
+            <ImageView
+                android:id="@+id/coverraf"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="#ff850d"
+                android:layout_gravity="right"
+                android:layout_alignParentRight="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-11-21"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="8dp"
+                android:textSize="14sp"
+                android:textColor="@color/grey"
+                />
+
+
+        </com.dsh.mydemos.view.RoundAngleFrameLayout>
+
+        <com.dsh.mydemos.myview.PictureTextCardView
+            android:id="@+id/ptcardview_top"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:text_marign="10dp"
+            app:img_height="100dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <com.dsh.mydemos.myview.PictureTextCardView
+            android:id="@+id/ptcardview_left"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:text_marign="10dp"
+            app:img_width="100dp"
+            app:img_height="150dp"
+            app:img_gravity="left"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="10dp"
+            />
+
+        <com.dsh.mydemos.myview.PictureTextCardView
+            android:id="@+id/ptcardview_right"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:text_marign="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
 
 </LinearLayout>

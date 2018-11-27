@@ -23,6 +23,10 @@ android {
             }
         }
 
+        ndk {
+            abiFilters "armeabi-v7a","x86"
+        }
+
     }
 
     buildTypes {
@@ -63,27 +67,9 @@ dependencies {
     implementation rootProject.ext.dependencies["multidex"]
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["rxpermissions2"]
+    implementation rootProject.ext.dependencies["glide"]
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
 
-//    implementation rootProject.ext.dependencies["zxing"]
-
-
-    //    testCompile 'junit:junit:4.12'
-//    implementation "com.android.support:appcompat-v7:$android_support"
-//    //权限访问
-//    implementation 'com.yanzhenjie:permission:2.0.0-rc4'
-//    //RxJava
-//    implementation 'io.reactivex.rxjava2:rxjava:2.1.0'
-//    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-//    //bufferknife
-//    implementation 'com.jakewharton:butterknife:8.4.0'
-//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-//    //FlowLayout 搜索记录
-//    implementation 'com.zhy:flowlayout-lib:1.0.3'
-//    //数据库
-//    implementation 'org.greenrobot:greendao:3.2.0'
-//    //数据库升级辅助类
-//    implementation 'com.github.yuweiguocn:GreenDaoUpgradeHelper:v1.4.0'
-//    implementation  'com.android.support:multidex:1.0.2'
 
 }

@@ -13,6 +13,7 @@ import com.dsh.mydemos.activity.AudioMp3Activity;
 import com.dsh.mydemos.activity.IntentServiceActivity;
 import com.dsh.mydemos.activity.MyCameraActivity;
 import com.dsh.mydemos.activity.QRCodeActivity;
+import com.dsh.mydemos.activity.RoundCornerLayoutActivity;
 import com.dsh.mydemos.activity.RxJavaActivity;
 import com.dsh.mydemos.activity.SearchViewGreenDaoActivity;
 import com.dsh.mydemos.base.BaseActivity;
@@ -45,7 +46,10 @@ public class MainActivity extends BaseActivity {
     Button mMp3;
     @BindView(R.id.qrcode)
     Button qrcode;
-    @BindView(R.id.mvp) Button mvp;
+    @BindView(R.id.mvp)
+    Button mvp;
+    @BindView(R.id.rc_layout)
+    Button rcLaout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +76,8 @@ public class MainActivity extends BaseActivity {
         mMp3.setOnClickListener(this);
         qrcode.setOnClickListener(this);
         mvp.setOnClickListener(this);
-        
+        rcLaout.setOnClickListener(this);
+
     }
 
     @Override
@@ -132,7 +137,9 @@ public class MainActivity extends BaseActivity {
             case R.id.mvp:
                 startActivity(new Intent(MainActivity.this, MVPLoginActivity.class));
                 break;
-
+            case R.id.rc_layout:
+                startActivity(new Intent(MainActivity.this, RoundCornerLayoutActivity.class));
+                break;
             default:
                 break;
         }
