@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/error_network"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络错误"/>
+
+    <Button
+        android:id="@+id/error_dataempty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="数据为空"/>
+
+    <Button
+        android:id="@+id/error_diy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义展示内容"/>
+
+    <com.dsh.mydemos.EmptyLayout.CommonDataEmptyView
+        android:id="@+id/empty_viewlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.dsh.mydemos.R;
 import com.dsh.mydemos.base.BaseActivity;
+import com.dsh.mydemos.base.DBaseActivity;
 import com.dsh.mydemos.camera.CameraUtil;
 import com.dsh.mydemos.camera.SurfacePreview;
 
@@ -35,7 +36,7 @@ import butterknife.ButterKnife;
  * Created by Adam on 2018/3/15.
  */
 
-public class MyCameraActivity extends BaseActivity implements  Camera.PictureCallback{
+public class MyCameraActivity extends DBaseActivity implements  Camera.PictureCallback{
 
     @BindView(R.id.camera_preview)
     FrameLayout mCameraPreview;

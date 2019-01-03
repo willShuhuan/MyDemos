@@ -2,20 +2,17 @@ package com.dsh.mydemos.activity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.dsh.mydemos.R;
-import com.dsh.mydemos.myview.PictureTextCardView;
-import com.dsh.mydemos.utils.UIUtil;
+import com.dsh.mydemos.mycardview.PictureTextCardView;
 import com.dsh.mydemos.view.CornerTransform;
 
 /**
@@ -41,6 +38,7 @@ public class RoundCornerLayoutActivity extends AppCompatActivity {
             "https://img-xhpfm.zhongguowangshi.com/News/201806/e160a76f4cef4a76b1b5064bed9a4760.jpg";
     @BindView(R.id.coverll) ImageView coverll;
     @BindView(R.id.coverrl) ImageView coverrl;
+    @BindView(R.id.cover_rci) ImageView cover_rci;
     @BindView(R.id.coverrcl) ImageView coverrcl;
     @BindView(R.id.coverrci) ImageView coverrci;
     @BindView(R.id.coverraf) ImageView coverraf;
@@ -93,60 +91,60 @@ public class RoundCornerLayoutActivity extends AppCompatActivity {
             cardview.setPreventCornerOverlap(false);
             cardview2.setUseCompatPadding(false);
             cardview2.setPreventCornerOverlap(false);
-            //圆角形变，除去左上左下两个角，设置右上右下两个角为圆角
-            CornerTransform transform = new CornerTransform(this, dip2px(10));
-            transform.setExceptCorner(true, false, true, false);
+            ////圆角形变，除去左上左下两个角，设置右上右下两个角为圆角
+            //CornerTransform transform = new CornerTransform(this, dip2px(10));
+            //transform.setExceptCorner(true, false, true, false);
+            //Glide.with(this)
+            //        //.load(R.mipmap.ic_android)
+            //        .load(url3)
+            //        //.apply(RequestOptions.centerCropTransform())//先centerCrop再设置图片圆角，否则会覆盖圆角效果
+            //        .apply(RequestOptions.bitmapTransform(transform))
+            //        .into(cover);
+
+            cover.setVisibility(View.GONE);
+            cover_rci.setVisibility(View.VISIBLE);
             Glide.with(this)
+                    //.load(R.mipmap.icon_android_big)
                     .load(url3)
-                    .apply(RequestOptions.centerCropTransform())//先centerCrop再设置图片圆角，否则会覆盖圆角效果
-                    .apply(RequestOptions.bitmapTransform(transform))
-                    .into(cover);
+                    .into(cover_rci);
 
             return;
         }
         //3.2 CardView： 5.0以上直接加载图片即可，无需处理图片圆角
         Glide.with(this)
-                .load(url3)
-                .apply(RequestOptions.centerCropTransform())
+                .load(R.mipmap.ic_news)
+                .apply(RequestOptions.fitCenterTransform())
                 .into(cover);
     }
 
 
 
     private void initPTCardView() {
-        if (Build.VERSION.SDK_INT<21){
-            ptcardviewTop.setUseCompatPadding(false);
-            ptcardviewTop.setPreventCornerOverlap(false);
-            ptcardviewLeft.setUseCompatPadding(false);
-            ptcardviewLeft.setPreventCornerOverlap(false);
-            ptcardviewRight.setUseCompatPadding(false);
-            ptcardviewRight.setPreventCornerOverlap(false);
-        }
+        //图片居左显示
         ptcardviewTop.setViewsLayout(PictureTextCardView.POSITION_TOP);
-        ptcardviewLeft.setViewsLayout(PictureTextCardView.POSITION_LEFT);
-        ptcardviewRight.setViewsLayout(PictureTextCardView.POSITION_RIGHT);
-        ptcardviewTop.getTitle().setText("自定义cardview：PictureTextCardView");
-        ptcardviewTop.getContents().setText("图片顶部展示");
-        ptcardviewTop.getRemark().setText("2018-11-23");
-        ptcardviewLeft.getTitle().setText("自定义cardview：PictureTextCardView");
-        ptcardviewLeft.getContents().setText("图片靠左展示");
-        ptcardviewLeft.getRemark().setText("2018-11-23");
-        ptcardviewRight.getTitle().setText("自定义cardview：PictureTextCardView");
-        ptcardviewRight.getContents().setText("图片靠右展示");
-        ptcardviewRight.getRemark().setText("2018-11-23");
+        ptcardviewTop.setTitleText("自定义cardview：PictureTextCardView");
+        ptcardviewTop.setContentsText("图片顶部展示");
         Glide.with(this)
                 .load(url3)
                 .apply(RequestOptions.centerCropTransform())
                 .into(ptcardviewTop.getImageView());
-        Glide.with(this)
-                .load(url4)
-                .apply(RequestOptions.centerCropTransform())
-                .into(ptcardviewLeft.getImageView());
-        Glide.with(this)
-                .load(url)
-                .apply(RequestOptions.centerCropTransform())
-                .into(ptcardviewRight.getImageView());
+
+        //图片居左展示
+        ptcardviewLeft.setViewsLayout(PictureTextCardView.POSITION_LEFT);
+        ptcardviewLeft.setTitle("自定义cardview：PictureTextCardView",24,getResources().getColor(R.color.red));
+        ptcardviewLeft.setContent("图片靠左展示",20,getResources().getColor(R.color.blue));
+        ptcardviewLeft.setRemark("2018-11-23",16,getResources().getColor(R.color.gray));
+        ptcardviewLeft.setImageView(this,url4);
+
+
+        //所有属性都用xml指定，java代码填充内容
+        ptcardviewRight.getTitle().setText("自定义cardview：PictureTextCardView");
+        ptcardviewRight.getContents().setText("图片靠右展示");
+        ptcardviewRight.getRemark().setText("2018-11-23");
+        ptcardviewRight.setImageView(this,url);
+
     }
+
 
     public int dip2px(float dpValue) {
         final float scale = getResources().getDisplayMetrics().density;

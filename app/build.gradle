@@ -68,6 +68,7 @@ dependencies {
     implementation rootProject.ext.dependencies["cardview-v7"]
     implementation rootProject.ext.dependencies["rxpermissions2"]
     implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["okhttp"]
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
 

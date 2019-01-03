@@ -1,4 +1,4 @@
-package com.dsh.mydemos.myview;
+package com.dsh.mydemos.mycardview;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -13,22 +13,25 @@ import android.widget.TextView;
  */
 
 public interface  ICardInterface{
-    /**
-     * 初始化布局，direction为图片位置：1左，2顶部，3右
-     * @param direction
-     */
-    void setViewsLayout(int direction);
+    /* 获得控件 */
     TextView getTitle();
     TextView getContents();
     TextView getRemark();
     ImageView getImageView();
+
+    /* 可见/不可见状态 */
     void setTitleVisible(boolean visible);
     void setContentsVisible(boolean visible);
     void setRemarkVisible(boolean visible);
     void setImageVisible(boolean visible);
+
+    /* 设置控件填充内容 */
+    void setImageView(Context context,String str);
     void setTitleText(String str);
     void setContentsText(String str);
     void setRemarkText(String str);
-    void setImageView(Context context, String str);
+    void setTitle(String title,int textSize,int color);
+    void setContent(String content,int textSize,int color);
+    void setRemark(String remark,int textSize,int color);
 
 }

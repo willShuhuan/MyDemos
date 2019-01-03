@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.dsh.mydemos.R;
 import com.dsh.mydemos.base.BaseActivity;
+import com.dsh.mydemos.base.DBaseActivity;
 import com.dsh.mydemos.utils.UIUtil;
 import com.google.zxing.WriterException;
 import com.yanzhenjie.permission.Action;
@@ -39,7 +40,7 @@ import java.util.List;
  * Change Log
  */
 
-public class QRCodeActivity extends BaseActivity implements View.OnClickListener{
+public class QRCodeActivity extends DBaseActivity implements View.OnClickListener{
 
     private Button scanBtn;
     private TextView result;

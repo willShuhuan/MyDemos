@@ -11,12 +11,13 @@ import android.widget.ImageView;
 
 import com.dsh.mydemos.R;
 import com.dsh.mydemos.base.BaseActivity;
+import com.dsh.mydemos.base.DBaseActivity;
 import com.dsh.mydemos.service.MyIntentService;
 
 /**
  * Created by Adam on 2018/3/29.
  */
-public class IntentServiceActivity extends BaseActivity implements MyIntentService.UpdateUI{
+public class IntentServiceActivity extends DBaseActivity implements MyIntentService.UpdateUI{
 
     /**
      * 图片地址集合

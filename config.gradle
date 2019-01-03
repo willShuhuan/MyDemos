@@ -53,6 +53,8 @@ ext {
             "rxpermissions2"            : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
             //glide
             "glide"                     : "com.github.bumptech.glide:glide:4.6.1",
+            //okhttp
+            "okhttp"                    : "com.squareup.okhttp3:okhttp:3.12.0",
 
 
     ]

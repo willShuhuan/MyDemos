@@ -103,7 +103,20 @@
             android:id="@+id/cover"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/icon_android_big"/>
+
+        <com.dsh.mydemos.view.RCImageView
+            android:id="@+id/cover_rci"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:scaleType="fitCenter"
+            app:round_corner_top_right="10dp"
+            app:round_corner_bottom_right="10dp"
+            android:src="@mipmap/icon_android_big"
+            android:visibility="gone"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -263,7 +276,7 @@
 
         </com.dsh.mydemos.view.RoundAngleFrameLayout>
 
-        <com.dsh.mydemos.myview.PictureTextCardView
+        <com.dsh.mydemos.mycardview.PictureTextCardView
             android:id="@+id/ptcardview_top"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
@@ -276,30 +289,34 @@
             android:layout_marginBottom="10dp"
             />
 
-        <com.dsh.mydemos.myview.PictureTextCardView
+        <com.dsh.mydemos.mycardview.PictureTextCardView
             android:id="@+id/ptcardview_left"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             app:cardCornerRadius="10dp"
             app:text_marign="10dp"
-            app:img_width="100dp"
-            app:img_height="150dp"
             app:img_gravity="left"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/white"
             android:layout_marginBottom="10dp"
             />
 
-        <com.dsh.mydemos.myview.PictureTextCardView
+        <com.dsh.mydemos.mycardview.PictureTextCardView
             android:id="@+id/ptcardview_right"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:cardCornerRadius="10dp"
             app:cardElevation="2dp"
             app:cardBackgroundColor="@color/white"
+            app:title_color="#ff850d"
+            app:content_color="@color/blue"
+            app:remark_color="@color/black"
+            app:cardCornerRadius="10dp"
+            app:img_height="150dp"
+            app:img_width="150dp"
             app:text_marign="10dp"
+            app:img_gravity="right"
             android:layout_marginBottom="10dp"
             />
 

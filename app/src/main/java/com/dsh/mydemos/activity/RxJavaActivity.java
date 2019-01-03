@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import com.dsh.mydemos.R;
 import com.dsh.mydemos.base.BaseActivity;
-import com.dsh.mydemos.base.BaseInterface;
 
+import com.dsh.mydemos.base.DBaseActivity;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -29,7 +29,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by Administrator on 2018/2/27.
  */
 
-public class RxJavaActivity extends BaseActivity {
+public class RxJavaActivity extends DBaseActivity {
 
     @BindView(R.id.io)
     Button mIo;

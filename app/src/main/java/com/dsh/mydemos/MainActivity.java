@@ -6,10 +6,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.dsh.mydemos.activity.AudioMp3Activity;
+import com.dsh.mydemos.activity.EmptyLayoutActivity;
 import com.dsh.mydemos.activity.IntentServiceActivity;
 import com.dsh.mydemos.activity.MyCameraActivity;
 import com.dsh.mydemos.activity.QRCodeActivity;
@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
     };
 
+
     private RxPermissions rxPermissions;
 
     @BindView(R.id.rxjava)
@@ -50,21 +51,26 @@ public class MainActivity extends BaseActivity {
     Button mvp;
     @BindView(R.id.rc_layout)
     Button rcLaout;
+    @BindView(R.id.empty_view) Button emptyView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu);
-        ButterKnife.bind(this);
+    //@Override
+    //protected void onCreate(Bundle savedInstanceState) {
+    //    super.onCreate(savedInstanceState);
+    //    setContentView(R.layout.menu);
+    //    ButterKnife.bind(this);
+    //
+    //    //initView();
+    //    //setListener();
+    //    //initData();
+    //}
 
-        initView();
-        setListener();
-        initData();
+    @Override public int getContentView() {
+        return R.layout.menu;
     }
 
     @Override
     public void initView() {
-
+        ButterKnife.bind(this);
     }
 
     @Override
@@ -77,7 +83,7 @@ public class MainActivity extends BaseActivity {
         qrcode.setOnClickListener(this);
         mvp.setOnClickListener(this);
         rcLaout.setOnClickListener(this);
-
+        emptyView.setOnClickListener(this);
     }
 
     @Override
@@ -95,9 +101,7 @@ public class MainActivity extends BaseActivity {
                             Log.e(MainActivity.class.getName(),
                                     "We highly recommend that you need to grant the " +
                                             "special permissions before initializing the SDK, otherwise some functions will not work");
-
                         }
-
                     }
 
                     @Override
@@ -110,7 +114,6 @@ public class MainActivity extends BaseActivity {
 
                     }
                 });
-
     }
 
     @Override
@@ -140,8 +143,17 @@ public class MainActivity extends BaseActivity {
             case R.id.rc_layout:
                 startActivity(new Intent(MainActivity.this, RoundCornerLayoutActivity.class));
                 break;
+            case R.id.empty_view:
+                startActivity(new Intent(MainActivity.this, EmptyLayoutActivity.class));
+                break;
             default:
                 break;
         }
+    }
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        ButterKnife.bind(this);
     }
 }
