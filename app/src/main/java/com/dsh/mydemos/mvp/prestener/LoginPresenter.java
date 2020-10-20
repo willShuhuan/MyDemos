@@ -1,12 +1,14 @@
 package com.dsh.mydemos.mvp.prestener;
 
+import android.arch.lifecycle.LifecycleOwner;
 import android.os.Handler;
+import android.util.Log;
+import com.dsh.mydemos.mvp.model.ILogin;
 import com.dsh.mydemos.mvp.model.bean.UserData;
-import com.dsh.mydemos.mvp.model.ILoginListener;
 import com.dsh.mydemos.mvp.model.LoginModel;
 import com.dsh.mydemos.mvp.model.bean.LoginParam;
 import com.dsh.mydemos.mvp.view.ILoginView;
-
+import java.lang.ref.WeakReference;
 
 /**
  * Created by dongshuhuan
@@ -15,29 +17,27 @@ import com.dsh.mydemos.mvp.view.ILoginView;
  * Description presenter关联model与view
  */
 
-public class LoginPresenter {
-    private LoginModel mModel;
-    private ILoginView mView;
+public class LoginPresenter extends BasePresenter{
+
+    private static final String TAG = "LoginPresenter";
+
+    private LoginModel mModel = new LoginModel();;
     private Handler mHandler = new Handler();
 
-    public LoginPresenter(ILoginView loginView) {
-        this.mView = loginView;
-        this.mModel= new LoginModel();
-    }
 
     public void goLogin(final LoginParam param){
 
-        mView.showLoading();
+        ((ILoginView)mView.get()).showLoading();
 
-        mModel.goLogin(param, new ILoginListener() {
+        mModel.goLogin(param, new ILogin.ILoginListener() {
             @Override
             public void loginSuccess( final UserData data) {
                 //handler交给主线程更新UI
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mView.hideLoading();
-                        mView.loginSuccess(data);
+                        ((ILoginView)mView.get()).hideLoading();
+                        ((ILoginView)mView.get()).loginSuccess(data);
                     }
                 },2000);
 
@@ -48,8 +48,8 @@ public class LoginPresenter {
                 mHandler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mView.hideLoading();
-                        mView.loginFail(result);
+                        ((ILoginView)mView.get()).hideLoading();
+                        ((ILoginView)mView.get()).loginFail(result);
 
                     }
                 },2000);
@@ -61,4 +61,15 @@ public class LoginPresenter {
 
     }
 
+    @Override
+    void oncreate(LifecycleOwner owner) {
+        super.oncreate(owner);
+        Log.d(TAG, "oncreate: ");
+    }
+
+    @Override
+    void onDestroy(LifecycleOwner owner) {
+        super.onDestroy(owner);
+        Log.d(TAG, "onDestroy: ");
+    }
 }

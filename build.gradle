@@ -7,14 +7,16 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
 
 allprojects {
     repositories {
+        mavenCentral()
+        maven { url 'https://maven.google.com' }
         jcenter()
         google()
         maven { url "https://jitpack.io" }//使用数据库升级辅助GreenDaoUpgradeHelper时添加

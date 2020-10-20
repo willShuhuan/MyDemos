@@ -1,6 +1,7 @@
 package com.dsh.mydemos.mvp.model;
 
 import com.dsh.mydemos.mvp.model.bean.LoginParam;
+import com.dsh.mydemos.mvp.model.bean.UserData;
 
 /**
  * Created by dongshuhuan
@@ -12,4 +13,8 @@ import com.dsh.mydemos.mvp.model.bean.LoginParam;
 
 public interface ILogin {
     void goLogin(LoginParam param, ILoginListener iLoginListener);
+    interface ILoginListener {
+        void loginSuccess(UserData data);
+        void loginFailed(String result);
+    }
 }

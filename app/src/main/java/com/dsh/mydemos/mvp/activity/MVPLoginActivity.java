@@ -25,7 +25,7 @@ import com.dsh.mydemos.mvp.view.ILoginView;
  * Change Log
  */
 
-public class MVPLoginActivity extends AppCompatActivity implements ILoginView {
+public class MVPLoginActivity extends MVPBaseActivity<LoginPresenter,ILoginView> implements ILoginView {
 
     @BindView(R.id.tv_username) EditText tvUsername;
     @BindView(R.id.tv_pwd) EditText tvPwd;
@@ -39,7 +39,6 @@ public class MVPLoginActivity extends AppCompatActivity implements ILoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mvplogin);
         ButterKnife.bind(this);
-        mPresenter = new LoginPresenter(this);
         button.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 if (TextUtils.isEmpty(tvPwd.getText().toString().trim()) ||
@@ -53,6 +52,22 @@ public class MVPLoginActivity extends AppCompatActivity implements ILoginView {
                 }
             }
         });
+    }
+
+    @Override
+    protected LoginPresenter createPresenter() {
+        return new LoginPresenter();
+    }
+
+    @Override
+    protected void init() {
+        getLifecycle().addObserver(mPresenter);
+    }
+
+    //预留模板方法,用于通用操作,做其他事情
+    @Override
+    protected void doOtherThings() {
+
     }
 
     @Override
@@ -72,11 +87,14 @@ public class MVPLoginActivity extends AppCompatActivity implements ILoginView {
         progressBar.setVisibility(View.VISIBLE);
     }
 
-    @Override public void hideLoading() {
+    @Override
+    public void hideLoading() {
         if (progressBar.isShown()){
             progressBar.setVisibility(View.GONE);
         }
     }
+
+
 }
 
 

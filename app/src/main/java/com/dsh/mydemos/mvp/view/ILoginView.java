@@ -9,10 +9,7 @@ import com.dsh.mydemos.mvp.model.bean.UserData;
  * Description
  */
 
-public interface ILoginView {
+public interface ILoginView extends IBaseView{
     void loginSuccess(UserData data);
     void loginFail(String result);
-    void showLoading();
-    void hideLoading();
-
 }
