@@ -130,7 +130,8 @@ public class CameraUtil {
 			mCanvas.drawText(title, w-s, h - s, textPaint);//水印边距 左，下
 
         }
-        mCanvas.save(Canvas.ALL_SAVE_FLAG);
+        //mCanvas.save(Canvas.ALL_SAVE_FLAG);
+        mCanvas.save();
         mCanvas.restore();
         return newBitmap;
     }

@@ -3,8 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyDemos.iml" filepath="$PROJECT_DIR$/MyDemos.iml" group="MyDemos" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyDemos/app" />
-      <module fileurl="file://$PROJECT_DIR$/dshzxinglib/dshzxinglib.iml" filepath="$PROJECT_DIR$/dshzxinglib/dshzxinglib.iml" group="MyDemos/dshzxinglib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="MyDemos/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dshzxinglib/dshzxinglib.iml" filepath="$PROJECT_DIR$/.idea/modules/dshzxinglib/dshzxinglib.iml" group="MyDemos/dshzxinglib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/lib.iml" group="MyDemos/lib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" group="MyDemos/lib-annotations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib-processor/lib-processor.iml" filepath="$PROJECT_DIR$/.idea/modules/lib-processor/lib-processor.iml" group="MyDemos/lib-processor" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_reflection/lib_reflection.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_reflection/lib_reflection.iml" group="MyDemos/lib_reflection" />
     </modules>
   </component>
 </project>

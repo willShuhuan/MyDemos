@@ -20,4 +20,7 @@
     <color name="theme_lanse">#3F51B5</color>
     <color name="gray_meituan">#494042</color>
     <color name="gray_meituan2">#e6494042</color>
+    <color name="wait">#8F9DEE</color>
+    <color name="playback">#303F9F</color>
+    <color name="live">#FF4081</color>
 </resources>

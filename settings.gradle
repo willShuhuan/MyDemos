@@ -1,1 +1,5 @@
+include ':lib-annotations'
+include ':lib-processor'
+include ':lib'
+include ':lib_reflection'
 include ':app', ':dshzxinglib'

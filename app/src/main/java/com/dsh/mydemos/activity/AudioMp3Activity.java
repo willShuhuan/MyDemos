@@ -141,6 +141,7 @@ public class AudioMp3Activity extends DBaseActivity {
 
 
                         //录音中....db为声音分贝，time为录音时长
+                        @Override
                         public void onUpdate(int db, long time) {
                             mTvRecord.setText("停止");
 //                            mVol.setText("音量"+(int) (3000 + 6000 * db / 100));

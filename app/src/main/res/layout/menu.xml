@@ -76,5 +76,33 @@
         android:textAllCaps="false"
         android:text="空视图"/>
 
+    <Button
+        android:id="@+id/mvvm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="MVVM"/>
+
+    <Button
+        android:id="@+id/kt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Kotlin"/>
+
+    <Button
+        android:id="@+id/retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="Retrofit"/>
+
+    <Button
+        android:id="@+id/apt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="APT ButterKnife"/>
+
 
 </LinearLayout>

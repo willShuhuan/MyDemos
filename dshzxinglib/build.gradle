@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 
 android {
@@ -24,14 +25,18 @@ dependencies {
     implementation rootProject.ext.dependencies["appcompat-v7"]
     //api：通过你自己的接口将你引用到的 module 接口暴露出去供其他 module 使用，含义上实际与 compile 一致,使用时去掉'implementation fileTree'
     api rootProject.ext.dependencies["zxing"]
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-     //或直接添加依赖
+    //或直接添加依赖
 //    api "com.google.zxing:core:3.3.0"
 //    implementation "com.android.support:appcompat-v7:26.0.2"
 
 
 
 
+}
+repositories {
+    mavenCentral()
 }
 
 

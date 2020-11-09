@@ -1,64 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dsh.mydemos">
 
-    <!-- 相机硬件的权限 -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--网络权限-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- 录音的权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-
     <application
+        android:name="com.dsh.kotlinpractice.example.core.BaseApplication"
         android:allowBackup="true"
+        android:appComponentFactory="dsf"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
+        <activity android:name="com.dsh.txlessons.annotaionprocessing.AptActivity"></activity>
+        <activity android:name="com.dsh.txlessons.threadandroid.MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.RxJavaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SearchViewGreenDaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.IntentServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AudioMp3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.QRCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mvp.activity.MVPLoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RoundCornerLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EmptyLayoutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.dsh.kotlinpractice.example.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.dsh.kotlinpractice.example.ContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.dsh.kotlinpractice.example.lesson.LessonActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".mvvm.MvvmMainActivity" />
+        <activity android:name="com.dsh.txlessons.retrofit.RetrofitActivity" />
 
-        <activity android:name=".activity.RxJavaActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.SearchViewGreenDaoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.MyCameraActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.IntentServiceActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.AudioMp3Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.QRCodeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".mvp.activity.MVPLoginActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.RoundCornerLayoutActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".activity.EmptyLayoutActivity"
-            android:screenOrientation="portrait"/>
-        <service android:name=".service.MyIntentService"/>
+        <service android:name=".service.MyIntentService" />
         <service android:name=".service.AudioMp3RecoderService3">
             <intent-filter>
                 <action android:name="com.dsh.mydemos.RECORD_MP3_ACTION" />
             </intent-filter>
         </service>
-
-
     </application>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 录音的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>

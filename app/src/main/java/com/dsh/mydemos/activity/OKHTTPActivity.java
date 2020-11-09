@@ -49,6 +49,10 @@ public class OKHTTPActivity extends BaseActivity {
 
     }
 
+    @Override public void onClick(View arg0) {
+
+    }
+
     private void syncRequest() {
         OkHttpClient client = new OkHttpClient.Builder()
                 .readTimeout(5, TimeUnit.SECONDS)
@@ -66,9 +70,6 @@ public class OKHTTPActivity extends BaseActivity {
         }
     }
 
-    @Override public void onClick(View arg0) {
-
-    }
 
 
 }

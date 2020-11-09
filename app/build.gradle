@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'//bufferknife相关
 apply plugin: 'org.greenrobot.greendao'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion rootProject.ext.android["compile_sdk_version"]
     buildToolsVersion rootProject.ext.android["build_tools_version"]
@@ -27,6 +30,10 @@ android {
             abiFilters "armeabi-v7a","x86"
         }
 
+        dataBinding{
+            enabled true
+        }
+
     }
 
     buildTypes {
@@ -44,6 +51,7 @@ greendao{
 }
 
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:2.0.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -70,7 +78,18 @@ dependencies {
     implementation rootProject.ext.dependencies["glide"]
     implementation rootProject.ext.dependencies["okhttp"]
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.2'
+
+    //apt+反射，仿butterknife实现
+    implementation project(':lib')
+    annotationProcessor project(':lib-processor')
 
 
-
+}
+repositories {
+    mavenCentral()
 }
