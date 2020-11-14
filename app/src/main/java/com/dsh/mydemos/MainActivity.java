@@ -22,6 +22,7 @@ import com.dsh.mydemos.base.BaseActivity;
 import com.dsh.mydemos.mvp.activity.MVPLoginActivity;
 import com.dsh.mydemos.mvvm.MvvmMainActivity;
 import com.dsh.txlessons.annotaionprocessing.AptActivity;
+import com.dsh.txlessons.constrainlayout.ConstrainLayoutActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -47,6 +48,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.mvvm) Button mvvm;
     @BindView(R.id.kt) Button kt;
     @BindView(R.id.apt) Button apt;
+    @BindView(R.id.constrainLayout) Button constrainLayout;
 
     private RxPermissions rxPermissions;
 
@@ -106,7 +108,8 @@ public class MainActivity extends BaseActivity {
 
     @OnClick({
             R.id.rxjava, R.id.flowLayout, R.id.mycamera, R.id.intentservice, R.id.mp3, R.id.qrcode,
-            R.id.mvp, R.id.rc_layout, R.id.empty_view, R.id.mvvm,R.id.kt,R.id.retrofit,R.id.apt
+            R.id.mvp, R.id.rc_layout, R.id.empty_view, R.id.mvvm,R.id.kt,R.id.retrofit,R.id.apt,
+            R.id.constrainLayout
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -148,6 +151,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.apt:
                 startActivity(new Intent(MainActivity.this, AptActivity.class));
+                break;
+            case R.id.constrainLayout:
+                startActivity(new Intent(MainActivity.this, ConstrainLayoutActivity.class));
                 break;
             default:
                 break;

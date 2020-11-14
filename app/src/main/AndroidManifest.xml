@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.dsh.txlessons.annotaionprocessing.AptActivity"></activity>
+        <activity android:name="com.dsh.txlessons.generics.GenericsActivity"></activity>
+        <activity android:name="com.dsh.txlessons.constrainlayout.ConstrainLayoutActivity" />
+        <activity android:name="com.dsh.txlessons.annotaionprocessing.AptActivity" />
         <activity android:name="com.dsh.txlessons.threadandroid.MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -67,16 +69,15 @@
             </intent-filter>
         </service>
     </application>
-    <uses-feature android:name="android.hardware.camera" />
-
+    <uses-feature android:name="android.hardware.camera" /> <!-- 网络权限 -->
     <uses-feature android:name="android.hardware.camera.autofocus" />
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 录音的权限 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 录音的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />

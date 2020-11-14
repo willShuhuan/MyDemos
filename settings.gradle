@@ -1,3 +1,4 @@
+include ':java_generics'
 include ':lib-annotations'
 include ':lib-processor'
 include ':lib'

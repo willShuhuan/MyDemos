@@ -104,5 +104,12 @@
         android:textAllCaps="false"
         android:text="APT ButterKnife"/>
 
+    <Button
+        android:id="@+id/constrainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="ConstrainLayout"/>
+
 
 </LinearLayout>

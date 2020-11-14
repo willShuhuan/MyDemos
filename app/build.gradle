@@ -88,6 +88,7 @@ dependencies {
     implementation project(':lib')
     annotationProcessor project(':lib-processor')
 
+    implementation 'com.squareup.okio:okio:2.4.3'
 
 }
 repositories {
