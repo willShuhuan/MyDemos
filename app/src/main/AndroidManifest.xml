@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.dsh.txlessons.generics.GenericsActivity"></activity>
         <activity android:name="com.dsh.txlessons.constrainlayout.ConstrainLayoutActivity" />
         <activity android:name="com.dsh.txlessons.annotaionprocessing.AptActivity" />
         <activity android:name="com.dsh.txlessons.threadandroid.MainActivity" />
+        <activity android:name="com.dsh.txlessons.gradle.GradleMainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

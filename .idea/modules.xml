@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyDemos.iml" filepath="$PROJECT_DIR$/MyDemos.iml" group="MyDemos" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyDemos_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/MyDemos_buildSrc.iml" group="MyDemos/MyDemos_buildSrc" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="MyDemos/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dshzxinglib/dshzxinglib.iml" filepath="$PROJECT_DIR$/.idea/modules/dshzxinglib/dshzxinglib.iml" group="MyDemos/dshzxinglib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelib1/gradlelib1.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelib1/gradlelib1.iml" group="MyDemos/gradlelib1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradlelib2/gradlelib2.iml" filepath="$PROJECT_DIR$/.idea/modules/gradlelib2/gradlelib2.iml" group="MyDemos/gradlelib2" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java_generics/java_generics.iml" filepath="$PROJECT_DIR$/.idea/modules/java_generics/java_generics.iml" group="MyDemos/java_generics" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/lib.iml" group="MyDemos/lib" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" group="MyDemos/lib-annotations" />

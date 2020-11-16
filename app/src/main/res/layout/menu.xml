@@ -1,115 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    tools:context="com.dsh.mydemos.MainActivity">
+    android:paddingRight="@dimen/activity_horizontal_margin">
 
-
-    <Button
-        android:id="@+id/rxjava"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="RxJava调度器"/>
-
-    <Button
-        android:id="@+id/flowLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="FlowLayout+GreenDao"/>
-
-    <Button
-        android:id="@+id/mycamera"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="自定义相机"/>
-
-    <Button
-        android:id="@+id/intentservice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="IntentService"/>
-
-    <Button
-        android:id="@+id/mp3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="AudioRecorder+Lame  MP3录音"/>
-
-    <Button
-        android:id="@+id/qrcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="zxing二维码扫描及生成"/>
-
-    <Button
-        android:id="@+id/mvp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="MVP"/>
-
-    <Button
-        android:id="@+id/rc_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="圆角阴影RelativeLayout/LinearLayout"/>
+        android:orientation="vertical"
+        tools:context="com.dsh.mydemos.MainActivity">
 
 
-    <Button
-        android:id="@+id/empty_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="空视图"/>
+        <Button
+            android:id="@+id/rxjava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            android:text="RxJava调度器"/>
 
-    <Button
-        android:id="@+id/mvvm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="MVVM"/>
+        <Button
+            android:id="@+id/flowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="FlowLayout+GreenDao"/>
 
-    <Button
-        android:id="@+id/kt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Kotlin"/>
+        <Button
+            android:id="@+id/mycamera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义相机"/>
 
-    <Button
-        android:id="@+id/retrofit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="Retrofit"/>
+        <Button
+            android:id="@+id/intentservice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="IntentService"/>
 
-    <Button
-        android:id="@+id/apt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="APT ButterKnife"/>
+        <Button
+            android:id="@+id/mp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="AudioRecorder+Lame  MP3录音"/>
 
-    <Button
-        android:id="@+id/constrainLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="ConstrainLayout"/>
+        <Button
+            android:id="@+id/qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="zxing二维码扫描及生成"/>
+
+        <Button
+            android:id="@+id/mvp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="MVP"/>
+
+        <Button
+            android:id="@+id/rc_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="圆角阴影RelativeLayout/LinearLayout"/>
 
 
-</LinearLayout>
+        <Button
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="空视图"/>
+
+        <Button
+            android:id="@+id/mvvm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="MVVM"/>
+
+        <Button
+            android:id="@+id/kt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Kotlin"/>
+
+        <Button
+            android:id="@+id/retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Retrofit"/>
+
+        <Button
+            android:id="@+id/apt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="APT ButterKnife"/>
+
+        <Button
+            android:id="@+id/constrainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="ConstrainLayout"/>
+
+        <Button
+            android:id="@+id/gradle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Gradle"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+

@@ -1,3 +1,5 @@
+include ':gradlelib2'
+include ':gradlelib1'
 include ':java_generics'
 include ':lib-annotations'
 include ':lib-processor'

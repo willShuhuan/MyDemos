@@ -1,17 +1,60 @@
 apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'//bufferknife相关
 apply plugin: 'org.greenrobot.greendao'
-
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.dshPlugin'
+
+//------------------  gradle插件start  ------------------
+//apply plugin:dshPlugin
+//
+////自定义插件
+//class dshPlugin implements Plugin<Project>{
+//
+//    @Override
+//    void apply(Project target) {
+//        def extension = target.extensions.create('dshE',dshExtension)
+//        println("Hello 修改前：${extension.name}")
+//
+//        target.afterEvaluate {
+//            println("Hello 修改后：${extension.name}")
+//        }
+//    }
+//}
+//
+//class dshExtension{
+//    def name = '大欢安卓gradle扩展插件'
+//}
+//
+//
+//dshE{
+//    name 'dsh_gradle'
+//    //等价于方法调用 -> name('dsh_gradle')->setName('dsh_gradle')
+//}
+
+
+//------------------  gradle插件end  ------------------
+
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('dshKey.store')
+            storePassword '123456'
+            keyAlias 'dsh'
+            keyPassword '123456'
+        }
+    }
     compileSdkVersion rootProject.ext.android["compile_sdk_version"]
     buildToolsVersion rootProject.ext.android["build_tools_version"]
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 
-    defaultConfig {
+        defaultConfig {
         applicationId "com.dsh.mydemos"
         minSdkVersion rootProject.ext.android["min_sdk_version"]
         targetSdkVersion rootProject.ext.android["target_sdk_version"]
@@ -40,8 +83,30 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        internal{
+            initWith debug
         }
     }
+
+//    //Gradle3.0版本开始需要配置渠道维度，不配置则报错
+//    flavorDimensions 'language','market'
+//    productFlavors{
+//        cn{
+//            dimension 'language'
+//        }
+//        en{
+//            dimension 'language'
+//        }
+//        yingyongbao{
+//            dimension 'market'
+//        }
+//        xiaomi{
+//            dimension 'market'
+//        }
+//    }
 }
 
 greendao{
@@ -89,6 +154,8 @@ dependencies {
     annotationProcessor project(':lib-processor')
 
     implementation 'com.squareup.okio:okio:2.4.3'
+
+    implementation project(':gradlelib1')
 
 }
 repositories {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Dsh_安卓</string>
+    <string name="app_name">Dsh_Android</string>
     <string name="show_all">查看全部课程</string>
     <string name="show_playback">只看回放课程</string>
 </resources>

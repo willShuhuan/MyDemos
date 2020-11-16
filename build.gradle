@@ -29,3 +29,20 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+task bumpVersion() {
+    doLast {
+        def versionPropsFile = file('version.properties')
+        def versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        def codeBumped = versionProps['VERSION_CODE'].toInteger() + 1
+        versionProps['VERSION_CODE'] = codeBumped.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+}
+
+task bumpVersionAndNotify(dependsOn: bumpVersion) {
+    doLast {
+        println "升级完成"
+    }
+}
+
