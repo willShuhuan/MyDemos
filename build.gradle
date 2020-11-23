@@ -46,3 +46,6 @@ task bumpVersionAndNotify(dependsOn: bumpVersion) {
     }
 }
 
+ext{
+    fullBuild = false//全量打包
+}

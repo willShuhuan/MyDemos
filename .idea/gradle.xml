@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/lib-annotations" />
             <option value="$PROJECT_DIR$/lib-processor" />
             <option value="$PROJECT_DIR$/lib_reflection" />
+            <option value="$PROJECT_DIR$/pluginapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

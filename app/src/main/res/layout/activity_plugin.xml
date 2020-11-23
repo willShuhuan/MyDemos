@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dsh.txlessons.plugin.PluginActivity"
+    >
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:textSize="30sp"
+        android:text="Hello,插件化"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="240dp"
+        android:textSize="30sp"
+        android:text="Hello,热更新"/>
+
+    <Button
+        android:id="@+id/loadPlugin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:text="加载插件"/>
+
+    <Button
+        android:id="@+id/showText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/hotFix"
+        android:layout_marginTop="320dp"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:text="显示文字"/>
+
+    <Button
+        android:id="@+id/hotFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/showText"
+        android:layout_marginTop="320dp"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:text="热更新"/>
+
+    <TextView
+        android:id="@+id/tv_hotfix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="440dp"
+        android:textSize="30sp"/>
+
+    <Button
+        android:id="@+id/removehotFix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/showText"
+        android:layout_marginTop="520dp"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:text="移除热更新"/>
+
+    <Button
+        android:id="@+id/killSelf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="520dp"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:text="杀掉应用"/>
+
+</android.support.constraint.ConstraintLayout>

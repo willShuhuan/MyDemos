@@ -22,8 +22,12 @@ import com.dsh.mydemos.base.BaseActivity;
 import com.dsh.mydemos.mvp.activity.MVPLoginActivity;
 import com.dsh.mydemos.mvvm.MvvmMainActivity;
 import com.dsh.txlessons.annotaionprocessing.AptActivity;
+import com.dsh.txlessons.blockcanary.BlockCanaryActivity;
 import com.dsh.txlessons.constrainlayout.ConstrainLayoutActivity;
 import com.dsh.txlessons.gradle.GradleMainActivity;
+import com.dsh.txlessons.leakcanary.LeakCanaryActivity;
+import com.dsh.txlessons.mvvm.MvvmActivity;
+import com.dsh.txlessons.plugin.PluginActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -111,7 +115,7 @@ public class MainActivity extends BaseActivity {
     @OnClick({
             R.id.rxjava, R.id.flowLayout, R.id.mycamera, R.id.intentservice, R.id.mp3, R.id.qrcode,
             R.id.mvp, R.id.rc_layout, R.id.empty_view, R.id.mvvm,R.id.kt,R.id.retrofit,R.id.apt,
-            R.id.constrainLayout,R.id.gradle
+            R.id.constrainLayout,R.id.gradle,R.id.plugin,R.id.mvvmArchitecture,R.id.leak,R.id.block
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -159,6 +163,18 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.gradle:
                 startActivity(new Intent(MainActivity.this, GradleMainActivity.class));
+                break;
+            case R.id.plugin:
+                startActivity(new Intent(MainActivity.this, PluginActivity.class));
+                break;
+            case R.id.mvvmArchitecture:
+                startActivity(new Intent(MainActivity.this, MvvmActivity.class));
+                break;
+            case R.id.leak:
+                startActivity(new Intent(MainActivity.this, LeakCanaryActivity.class));
+                break;
+            case R.id.block:
+                startActivity(new Intent(MainActivity.this, BlockCanaryActivity.class));
                 break;
             default:
                 break;

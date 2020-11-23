@@ -1,3 +1,4 @@
+include ':pluginapp'
 include ':gradlelib2'
 include ':gradlelib1'
 include ':java_generics'

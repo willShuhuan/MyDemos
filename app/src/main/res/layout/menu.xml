@@ -122,6 +122,34 @@
             android:textAllCaps="false"
             android:text="Gradle"/>
 
+        <Button
+            android:id="@+id/plugin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="插件化"/>
+
+        <Button
+            android:id="@+id/mvvmArchitecture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="Android架构"/>
+
+        <Button
+            android:id="@+id/leak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="LeakCanary源码分析"/>
+
+        <Button
+            android:id="@+id/block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="BlockCanary源码分析"/>
+
 
     </LinearLayout>
 

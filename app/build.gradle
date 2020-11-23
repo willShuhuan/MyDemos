@@ -54,7 +54,7 @@ android {
     }
 
 
-        defaultConfig {
+    defaultConfig {
         applicationId "com.dsh.mydemos"
         minSdkVersion rootProject.ext.android["min_sdk_version"]
         targetSdkVersion rootProject.ext.android["target_sdk_version"]
@@ -74,7 +74,7 @@ android {
         }
 
         dataBinding{
-            enabled true
+            enabled false
         }
 
     }
@@ -86,13 +86,18 @@ android {
             signingConfig signingConfigs.release
         }
 
+        debug{
+            buildConfigField("String","BaseURL",'"http://api.dshcoder.com"')
+        }
+
         internal{
             initWith debug
         }
     }
 
-//    //Gradle3.0版本开始需要配置渠道维度，不配置则报错
+    //Gradle3.0版本开始需要配置渠道维度，不配置则报错
 //    flavorDimensions 'language','market'
+//    flavorDimensions 'language'
 //    productFlavors{
 //        cn{
 //            dimension 'language'
@@ -155,7 +160,18 @@ dependencies {
 
     implementation 'com.squareup.okio:okio:2.4.3'
 
+    //implementation/api区别
     implementation project(':gradlelib1')
+
+    compileOnly 'com.android.tools.build:gradle:3.5.4'
+
+    //leakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+    //block-canary
+    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+
 
 }
 repositories {

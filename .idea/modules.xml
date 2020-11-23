@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" filepath="$PROJECT_DIR$/.idea/modules/lib-annotations/lib-annotations.iml" group="MyDemos/lib-annotations" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib-processor/lib-processor.iml" filepath="$PROJECT_DIR$/.idea/modules/lib-processor/lib-processor.iml" group="MyDemos/lib-processor" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_reflection/lib_reflection.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_reflection/lib_reflection.iml" group="MyDemos/lib_reflection" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pluginapp/pluginapp.iml" filepath="$PROJECT_DIR$/.idea/modules/pluginapp/pluginapp.iml" group="MyDemos/pluginapp" />
     </modules>
   </component>
 </project>

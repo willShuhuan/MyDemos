@@ -1,16 +1,17 @@
 package com.dsh.mydemos.mvvm;
 
 
-import android.databinding.BaseObservable;
+//import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import com.dsh.mydemos.BR;
+//import com.dsh.mydemos.BR;
 
 /**
  * @author dongshuhuan
  * date 2020/10/20
  * ViewModel
  */
-public class User extends BaseObservable {
+//public class User extends BaseObservable {
+public class User {
 
     //user作为一个被观察者, frameWork作为观察者, user可以被观察
 
@@ -29,7 +30,7 @@ public class User extends BaseObservable {
 
     public void setName(String name) {
         this.name = name;
-        notifyPropertyChanged(BR.name);
+        //notifyPropertyChanged(BR.name);
     }
 
     @Bindable
@@ -39,6 +40,6 @@ public class User extends BaseObservable {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
-        notifyPropertyChanged(BR.pwd);
+        //notifyPropertyChanged(BR.pwd);
     }
 }

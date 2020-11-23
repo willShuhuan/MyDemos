@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.xhmm.gradlelib1">
+    package="com.dsh.gradlelib1">
 
     /
 </manifest>
