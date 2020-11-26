@@ -24,10 +24,14 @@ import com.dsh.mydemos.mvvm.MvvmMainActivity;
 import com.dsh.txlessons.annotaionprocessing.AptActivity;
 import com.dsh.txlessons.blockcanary.BlockCanaryActivity;
 import com.dsh.txlessons.constrainlayout.ConstrainLayoutActivity;
+import com.dsh.txlessons.customview.CustomViewActivity;
 import com.dsh.txlessons.gradle.GradleMainActivity;
 import com.dsh.txlessons.leakcanary.LeakCanaryActivity;
 import com.dsh.txlessons.mvvm.MvvmActivity;
 import com.dsh.txlessons.plugin.PluginActivity;
+import com.dsh.txlessons.viewclip.ViewClipActivity;
+import com.dsh.txlessons.viewtext.TextMeasureActivity;
+import com.dsh.txlessons.viewxfer.XferActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
@@ -55,6 +59,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.apt) Button apt;
     @BindView(R.id.constrainLayout) Button constrainLayout;
     @BindView(R.id.gradle) Button gradle;
+    @BindView(R.id.view1) Button view1;
 
     private RxPermissions rxPermissions;
 
@@ -115,7 +120,8 @@ public class MainActivity extends BaseActivity {
     @OnClick({
             R.id.rxjava, R.id.flowLayout, R.id.mycamera, R.id.intentservice, R.id.mp3, R.id.qrcode,
             R.id.mvp, R.id.rc_layout, R.id.empty_view, R.id.mvvm,R.id.kt,R.id.retrofit,R.id.apt,
-            R.id.constrainLayout,R.id.gradle,R.id.plugin,R.id.mvvmArchitecture,R.id.leak,R.id.block
+            R.id.constrainLayout,R.id.gradle,R.id.plugin,R.id.mvvmArchitecture,R.id.leak,R.id.block,
+            R.id.view1,R.id.xfer,R.id.viewText,R.id.viewClip
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -175,6 +181,18 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.block:
                 startActivity(new Intent(MainActivity.this, BlockCanaryActivity.class));
+                break;
+            case R.id.view1:
+                startActivity(new Intent(MainActivity.this, CustomViewActivity.class));
+                break;
+            case R.id.xfer:
+                startActivity(new Intent(MainActivity.this, XferActivity.class));
+                break;
+            case R.id.viewText:
+                startActivity(new Intent(MainActivity.this, TextMeasureActivity.class));
+                break;
+            case R.id.viewClip:
+                startActivity(new Intent(MainActivity.this, ViewClipActivity.class));
                 break;
             default:
                 break;

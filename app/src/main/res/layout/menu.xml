@@ -150,6 +150,33 @@
             android:textAllCaps="false"
             android:text="BlockCanary源码分析"/>
 
+        <Button
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view①绘制基础"/>
+
+        <Button
+            android:id="@+id/xfer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view②Xfermode"/>
+
+        <Button
+            android:id="@+id/viewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view③文字绘制与测量"/>
+
+        <Button
+            android:id="@+id/viewClip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view④范围裁切和几何变换"/>
 
     </LinearLayout>
 

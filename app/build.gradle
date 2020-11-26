@@ -3,7 +3,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.dshPlugin'
+apply plugin: 'com.dshPlugin'//插件demo
+//apply plugin: 'com.dsh.trace'//ASM日志追踪扩展插件
+
 
 //------------------  gradle插件start  ------------------
 //apply plugin:dshPlugin
