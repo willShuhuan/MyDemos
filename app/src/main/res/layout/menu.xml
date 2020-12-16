@@ -178,6 +178,41 @@
             android:textAllCaps="false"
             android:text="自定义view④范围裁切和几何变换"/>
 
+        <Button
+            android:id="@+id/viewAnimation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view⑤属性动画"/>
+
+        <Button
+            android:id="@+id/bitmapDrawable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view⑥Bitmap和Drawable"/>
+
+        <Button
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view⑦手写MaterialEditText"/>
+
+        <Button
+            android:id="@+id/viewcustomize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="自定义view⑧自定义布局"/>
+
+        <Button
+            android:id="@+id/setview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="setContentView与子线程更新UI"/>
+
     </LinearLayout>
 
 

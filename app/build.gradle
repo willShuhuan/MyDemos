@@ -96,6 +96,9 @@ android {
             initWith debug
         }
     }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 
     //Gradle3.0版本开始需要配置渠道维度，不配置则报错
 //    flavorDimensions 'language','market'
@@ -124,6 +127,8 @@ greendao{
 
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.2'
+    implementation 'android.arch.navigation:navigation-fragment-ktx:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui-ktx:1.0.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

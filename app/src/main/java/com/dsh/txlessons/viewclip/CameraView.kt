@@ -81,10 +81,10 @@ class CameraView (context: Context,attributeSet: AttributeSet): View(context,att
     canvas.restore()
 
     //画一条线
-//    canvas.save()
+    canvas.save()
     paint.color = Color.parseColor("#FF0000")
     canvas.drawLine(BITMAP_SIZE/2,BITMAP_PADDING+ BITMAP_SIZE/2, BITMAP_PADDING+BITMAP_SIZE,BITMAP_PADDING+ BITMAP_SIZE/2,paint)
-//    canvas.restore()
+    canvas.restore()
 
     //下半部分，反着看，绘制->移动->裁切->camera旋转->再移动
     //移动

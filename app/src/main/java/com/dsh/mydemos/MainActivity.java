@@ -29,7 +29,12 @@ import com.dsh.txlessons.gradle.GradleMainActivity;
 import com.dsh.txlessons.leakcanary.LeakCanaryActivity;
 import com.dsh.txlessons.mvvm.MvvmActivity;
 import com.dsh.txlessons.plugin.PluginActivity;
+import com.dsh.txlessons.setview.SetViewActivity;
+import com.dsh.txlessons.viewanimation.ViewAnimationActivity;
+import com.dsh.txlessons.viewbitmap.BitmapDrawableActivity;
 import com.dsh.txlessons.viewclip.ViewClipActivity;
+import com.dsh.txlessons.viewcustomize.ViewCustomizeActivity;
+import com.dsh.txlessons.viewmaterialedittext.MaterialEditTextActivity;
 import com.dsh.txlessons.viewtext.TextMeasureActivity;
 import com.dsh.txlessons.viewxfer.XferActivity;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -121,7 +126,8 @@ public class MainActivity extends BaseActivity {
             R.id.rxjava, R.id.flowLayout, R.id.mycamera, R.id.intentservice, R.id.mp3, R.id.qrcode,
             R.id.mvp, R.id.rc_layout, R.id.empty_view, R.id.mvvm,R.id.kt,R.id.retrofit,R.id.apt,
             R.id.constrainLayout,R.id.gradle,R.id.plugin,R.id.mvvmArchitecture,R.id.leak,R.id.block,
-            R.id.view1,R.id.xfer,R.id.viewText,R.id.viewClip
+            R.id.view1,R.id.xfer,R.id.viewText,R.id.viewClip,R.id.viewAnimation,R.id.bitmapDrawable,
+            R.id.editText,R.id.viewcustomize,R.id.setview
     })
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -193,6 +199,21 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.viewClip:
                 startActivity(new Intent(MainActivity.this, ViewClipActivity.class));
+                break;
+            case R.id.viewAnimation:
+                startActivity(new Intent(MainActivity.this, ViewAnimationActivity.class));
+                break;
+            case R.id.bitmapDrawable:
+                startActivity(new Intent(MainActivity.this, BitmapDrawableActivity.class));
+                break;
+            case R.id.editText:
+                startActivity(new Intent(MainActivity.this, MaterialEditTextActivity.class));
+                break;
+            case R.id.viewcustomize:
+                startActivity(new Intent(MainActivity.this, ViewCustomizeActivity.class));
+                break;
+            case R.id.setview:
+                startActivity(new Intent(MainActivity.this, SetViewActivity.class));
                 break;
             default:
                 break;

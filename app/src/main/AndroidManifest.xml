@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dsh.mydemos">
-
+    <!-- 录音的权限 -->
     <application
         android:name=".app.HotfixApp"
         android:allowBackup="true"
@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name="com.dsh.txlessons.viewclip.ViewClipActivity"></activity>
+        <activity android:name="com.dsh.txlessons.setview.SetViewActivity"></activity>
+        <activity android:name="com.dsh.txlessons.viewcustomize.ViewCustomizeActivity" />
+        <activity android:name="com.dsh.txlessons.viewmaterialedittext.MaterialEditTextActivity" />
+        <activity android:name="com.dsh.txlessons.viewanimation.ViewAnimationActivity" />
+        <activity android:name="com.dsh.txlessons.viewbitmap.BitmapDrawableActivity" />
+        <activity android:name="com.dsh.txlessons.viewclip.ViewClipActivity" />
         <activity android:name="com.dsh.txlessons.viewtext.TextMeasureActivity" />
         <activity android:name="com.dsh.txlessons.viewxfer.XferActivity" />
         <activity android:name="com.dsh.txlessons.customview.CustomViewActivity" />
@@ -76,7 +81,7 @@
                 <action android:name="com.dsh.mydemos.RECORD_MP3_ACTION" />
             </intent-filter>
         </service>
-    </application> <!-- 录音的权限 -->
+    </application>
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
